@@ -1,4 +1,4 @@
-# Course Schedules
+# Course Schedule
 
 [![Join the chat at https://gitter.im/OU-PhD-Econometrics-Fall-2022/community](https://badges.gitter.im/OU-PhD-Econometrics-Fall-2022/community.svg)](https://gitter.im/OU-PhD-Econometrics-Fall-2022/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
