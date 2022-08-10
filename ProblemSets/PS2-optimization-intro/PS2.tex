@@ -21,7 +21,7 @@
 \author{ECON 6343: Econometrics III\\
 Prof. Tyler Ransom\\
 University of Oklahoma}
-\date{Due: September 9, 9:00 AM}
+\date{Due: September 13, 9:00 AM}
 
 \maketitle
 Directions: Answer all questions. Each student must turn in their own copy, but you may work in groups. Clearly label all answers. Show all of your code. Turn in jl-file(s), output files and writeup via GitHub. Your writeup may simply consist of comments in jl-file(s). If applicable, put the names of all group members at the top of your writeup or jl-file.
@@ -103,7 +103,7 @@ First, let's import and set up the data. Note that you will need to put the URL 
 using DataFrames
 using CSV
 using HTTP
-url = "https://raw.githubusercontent.com/OU-PhD-Econometrics/fall-2020/
+url = "https://raw.githubusercontent.com/OU-PhD-Econometrics/fall-2022/
 master/ProblemSets/PS1-julia-intro/nlsw88.csv"
 df = CSV.read(HTTP.get(url).body)
 X = [ones(size(df,1),1) df.age df.race.==1 df.collgrad.==1]
