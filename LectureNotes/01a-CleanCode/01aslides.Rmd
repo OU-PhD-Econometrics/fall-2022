@@ -1,0 +1,90 @@
+---
+title: "Lecture 1A"
+subtitle: "Clean Code"
+author: Tyler Ransom
+date: ECON 6343, University of Oklahoma
+output:
+  xaringan::moon_reader:
+    css: ['default', 'metropolis', 'metropolis-fonts', 'ou-colors.css']
+    # self_contained: true
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+    seal: false
+
+---
+
+class: title-slide   
+
+<br><br><br>
+
+# Lecture 1A
+
+## Clean Code
+
+### Tyler Ransom
+
+### ECON 6343, University of Oklahoma
+
+---
+
+# Attribution
+
+- Today's material comes from two sources:
+
+1. *The Clean Coder*, by Robert C. Martin
+
+2. [*Code and Data for the Social Sciences: A Practitioner's Guide*](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf), by Gentzkow and Shapiro
+
+
+---
+
+# What is Clean Code? Why isn't all code clean?
+
+- .hi-crimson[Clean Code:] Code that is easy to understand and easy to modify
+
+- Clean code saves everyone time
+
+- Clean code can be elusive because, in the moment, it seems more difficult to produce than messy code
+
+- But in the long run, clean code pays dividends
+
+- partial source from: https://garywoodfine.com/what-is-clean-code/
+
+
+---
+
+# Why clean code matters: Scientific reproducibility and transparency
+
+- Good science is based on careful observations
+
+- Science progresses through iteratively testing hypotheses and making predictions
+
+- Scientific progress is impeded if prior hypothesis tests are not reproducible or if prior efforts are not transparent 
+
+- Thus, for science that involves computer code, clean code is a must
+
+
+---
+
+# Why clean code matters: Personal and team sanity
+
+- 
+
+
+---
+
+# Big ideas
+
+- Refactoring
+
+- Unit testing
+
+- Bug fixing
+
+- Pair programming
+
+- Issue tracking / project management
+

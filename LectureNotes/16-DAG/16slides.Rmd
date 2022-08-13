@@ -15,6 +15,7 @@ output:
       countIncrementalSlides: false
       ratio: '16:9'
       beforeInit: ["https://platform.twitter.com/widgets.js"]
+    seal: false
 
 ---
 
@@ -34,6 +35,20 @@ BibOptions(check.entries = FALSE,
            dashed = TRUE)
 biblio <- ReadBib("../../References/References.bib", check = FALSE)
 ```
+
+class: title-slide
+
+<br><br><br>
+
+# Lecture 16
+
+## Using DAGs for Causal Inference
+
+### Tyler Ransom
+
+### ECON 6343, University of Oklahoma
+
+---
 
 # Attribution
 

@@ -4,7 +4,7 @@
     <title>Lecture 1</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tyler Ransom" />
-    <script src="01slides_files/header-attrs-2.10/header-attrs.js"></script>
+    <script src="01slides_files/header-attrs-2.14/header-attrs.js"></script>
     <link href="01slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="01slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="01slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -12,15 +12,21 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+
+class: title-slide   
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 # Lecture 1
+
 ## Productivity and Computational Tools
+
 ### Tyler Ransom
+
 ### ECON 6343, University of Oklahoma
 
 ---
-
 
 # Attribution
 
@@ -136,7 +142,7 @@ The techniques we will cover are used in a wide variety of fields of applied mic
 
     - Papers should be related to course material in some way
 
-
+- Write a research proposal for an idea for your dissertation research
 
 
 ---
@@ -212,7 +218,7 @@ date to ensure the paper is appropriate for a presentation
 
 # Slides
 
-All slides will be available on the [course GitHub page](https://github.com/OU-PhD-Econometrics/fall-2021)
+All slides will be available on the [course GitHub page](https://github.com/OU-PhD-Econometrics/fall-2022)
 
 --
 
@@ -279,14 +285,14 @@ println("β-hat is $(round(bbeta_hat[1],digits=3)) and the true β is $(round(bb
 
 - You will be given a list of required packages at the top of every problem set
 
-- (Note: package installation in Julia can take quite awhile)
+- (Note: package installation in Julia can take sometimes quite awhile)
 
 
 ---
 
 # More about Julia
 
-- There is a [separate slide deck](https://raw.githack.com/OU-PhD-Econometrics/fall-2021/master/LectureNotes/00-JuliaTips/00slides.html#1) for your reference
+- There is a [separate slide deck](https://raw.githack.com/OU-PhD-Econometrics/fall-2022/master/LectureNotes/00-JuliaTips/00slides.html#1) for your reference
 
 - This explains more about how to use Julia
 
@@ -454,6 +460,8 @@ There are four main git operations:
 
 - [Here](https://www.youtube.com/watch?v=77W2JSL7-r8) is a nice video tutorial on how to use GitHub desktop
 
+- [Here](https://www.youtube.com/watch?v=i_23KUAEtUM) is a video tutorial on using Git with VS Code
+
 - For this class, you will be able to get by with very little Git knowledge
 
 - But if you want to get serious about doing reproducible research, I recommend practicing with Git as much as possible
@@ -465,9 +473,9 @@ There are four main git operations:
 
 # Activity: Forking the class repository
 
-- After signing up for a GitHub account, go to the class [repository](https://github.com/OU-PhD-Econometrics/fall-2021) and click `Fork` in the top-righthand corner
+- After signing up for a GitHub account, go to the class [repository](https://github.com/OU-PhD-Econometrics/fall-2022) and click `Fork` in the top-righthand corner
 
-- Once you do this, you should be able to visit https://github.com/your-username/fall-2021 and see an exact copy of all of the files
+- Once you do this, you should be able to visit https://github.com/your-username/fall-2022 and see an exact copy of all of the files
 
 ---
 
@@ -559,6 +567,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

@@ -12,6 +12,7 @@ output:
       highlightLines: true
       countIncrementalSlides: false
       ratio: '16:9'
+    seal: false
 
 ---
 
@@ -25,6 +26,20 @@ BibOptions(check.entries = FALSE,
 biblio <- ReadBib("../../References/References.bib", check = FALSE)
 #biblio <- ReadBib(system.file("Bib", "biblatexExamples.bib", package = "RefManageR"))
 ```
+
+class: title-slide   
+
+<br><br><br>
+
+# Lecture 2
+
+## Introduction to Structural Models
+
+### Tyler Ransom
+
+### ECON 6343, University of Oklahoma
+
+---
 
 # Today and next class
 

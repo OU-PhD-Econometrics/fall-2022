@@ -4,6 +4,7 @@
     <title>Lecture 3</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tyler Ransom" />
+    <script src="03slides_files/header-attrs-2.14/header-attrs.js"></script>
     <link href="03slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="03slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="03slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -23,17 +24,23 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+
+
+
+class: title-slide   
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 # Lecture 3
+
 ## Structural Modeling Workflow
+
 ### Tyler Ransom
+
 ### ECON 6343, University of Oklahoma
 
 ---
-
-
-
 
 # Today
 
@@ -113,11 +120,11 @@ We want to estimate `\(\left(\beta_1,\beta_2,\beta_3\right)\)`, which are .hi[re
 
 - We could try to get causal estimates using a variety of identification strategies:
 
-- find a valid instrument for `\(s_i\)` (Angrist and Krueger, 1991; Card, 1995)
+- find a valid instrument for `\(s_i\)` 
 
-- exploit a discontinuity in `\(s_i\)` (Ost, Pan, and Webber, 2018)
+- exploit a discontinuity in `\(s_i\)` 
 
-- randomize `\(s_i\)` (Attanasio, Meghir, and Santiago, 2011)
+- randomize `\(s_i\)` 
 
 - etc.
 
@@ -312,7 +319,7 @@ describe(df)
 
 - It looks like we'll have to have `\(s\)` be binary (`collgrad` variable)
 
-- Also need to assume `\(x = age - 18\)` if non-grad, `\(x = age - 22\)` if grad  (Mincer, 1974)
+- Also need to assume `\(x = age - 18\)` if non-grad, `\(x = age - 22\)` if grad  
 
 - Then we just need to add some functional form assumptions, and we'll be ready
 
@@ -642,31 +649,7 @@ describe(df;cols=[:basesch,:cflsch])
 
 # References
 .smallest[
-Angrist, J. D. and A. B. Krueger (1991). "Does Compulsory School
-Attendance Affect Schooling and Earnings?" In: _Quarterly Journal of
-Economics_ 106.4, pp. 979-1014. DOI:
-[10.2307/2937954](https://doi.org/10.2307%2F2937954).
-
-Attanasio, O. P, C. Meghir, and A. Santiago (2011). "Education Choices
-in Mexico: Using a Structural Model and a Randomized Experiment to
-Evaluate PROGRESA". In: _Review of Economic Studies_ 79.1, pp. 37-66.
-DOI:
-[10.1093/restud/rdr015](https://doi.org/10.1093%2Frestud%2Frdr015).
-
-Card, D. (1995). "Using Geographic Variation in College Proximity to
-Estimate the Return to Schooling". In: _Aspects of Labor Market
-Behaviour: Essays in Honour of John Vanderkamp_. Ed. by L. N.
-Christofides, E. K. Grant and R. Swidinsky. Toronto: University of
-Toronto Press.
-
-Mincer, J. (1974). _Schooling, Experience and Earnings_. New York:
-Columbia University Press for National Bureau of Economic Research.
-
-Ost, B, W. Pan, and D. Webber (2018). "The Returns to College
-Persistence for Marginal Students: Regression Discontinuity Evidence
-from University Dismissal Policies". In: _Journal of Labor Economics_
-36.3, pp. 779-805. DOI:
-[10.1086/696204](https://doi.org/10.1086%2F696204).
+NULL
 ]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
@@ -716,6 +699,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

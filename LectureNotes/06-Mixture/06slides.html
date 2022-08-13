@@ -4,6 +4,7 @@
     <title>Lecture 6</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tyler Ransom" />
+    <script src="06slides_files/header-attrs-2.14/header-attrs.js"></script>
     <link href="06slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="06slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="06slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -23,23 +24,29 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+
+
+
+class: title-slide   
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 # Lecture 6
+
 ## Preference Heterogeneity with Mixture Distributions
+
 ### Tyler Ransom
+
 ### ECON 6343, University of Oklahoma
 
 ---
-
-
-
 
 # Attribution
 
 Many of these slides are based on slides written by Peter Arcidiacono. I use them with his permission.
 
-These slides also heavily follow Chapters 6 and 14 of Train (2009)
+These slides also heavily follow Chapters 6 and 14 of 
 
 ---
 # Plan for the day
@@ -301,7 +308,7 @@ where `\(q_{is}\)` is the probability that `\(i\)` belongs to group `\(s\)`
 q_{is}=&amp;\frac{\pi_s\prod_t\mathcal{L}(Y_{1t}|X_{1t},\alpha_1,s)\mathcal{L}(Y_{2t}|X_{2t},\alpha_2,s)}{\sum_m\pi_m\prod_t\mathcal{L}(Y_{1t}|X_{1t},\alpha_1,m)\mathcal{L}(Y_{2t}|X_{2t},\alpha_2,m)}
 \end{align*}`
 
-- Iterate on E and M steps until the `\(q\)`'s converge (Arcidiacono and Jones, 2003)
+- Iterate on E and M steps until the `\(q\)`'s converge 
 
 
 ---
@@ -344,13 +351,7 @@ q_{is}=&amp;\frac{\pi_s\prod_t\mathcal{L}(Y_{1t}|X_{1t},\alpha_1,s)\mathcal{L}(Y
 
 # References
 .smaller[
-Arcidiacono, P. and J. B. Jones (2003). "Finite Mixture Distributions,
-Sequential Likelihood and the EM Algorithm". In: _Econometrica_ 71.3,
-pp. 933-946. DOI:
-[10.1111/1468-0262.00431](https://doi.org/10.1111%2F1468-0262.00431).
-
-Train, K. (2009). _Discrete Choice Methods with Simulation_. 2nd ed.
-Cambridge; New York: Cambridge University Press. ISBN: 9780521766555.
+NULL
 ]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
@@ -400,6 +401,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
