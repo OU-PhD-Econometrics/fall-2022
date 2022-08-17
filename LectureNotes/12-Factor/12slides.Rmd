@@ -62,6 +62,14 @@ I gratefully acknowledge Esteban Aucejo for sharing his slides on factor models,
 
 I also based some content on `r Citet(biblio,"shalizi2019")` which is an excellent textbook on data analysis.
 
+---
+# What are proxy variables?
+
+.center[
+![xkcd](https://imgs.xkcd.com/comics/proxy_variable.png)
+]
+
+[Source](https://xkcd.com/2652/)
 
 ---
 # Proxy variables

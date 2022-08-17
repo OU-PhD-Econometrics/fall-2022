@@ -4,6 +4,7 @@
     <title>Lecture 12</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tyler Ransom" />
+    <script src="12slides_files/header-attrs-2.14/header-attrs.js"></script>
     <link href="12slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="12slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="12slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -23,17 +24,23 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+
+
+
+class: title-slide
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 # Lecture 12
+
 ## Factor Models
+
 ### Tyler Ransom
+
 ### ECON 6343, University of Oklahoma
 
 ---
-
-
-
 
 # Plan for the Day
 
@@ -54,6 +61,14 @@ I gratefully acknowledge Esteban Aucejo for sharing his slides on factor models,
 
 I also based some content on Shalizi (2019) which is an excellent textbook on data analysis.
 
+---
+# What are proxy variables?
+
+.center[
+![xkcd](https://imgs.xkcd.com/comics/proxy_variable.png)
+]
+
+[Source](https://xkcd.com/2652/)
 
 ---
 # Proxy variables
@@ -422,7 +437,7 @@ M &amp;= X\boldsymbol{\beta} + \underbrace{\boldsymbol{\theta}_k\Lambda_k + \bol
     - 3 factors: family background, math/verbal skills, externalizing behavior
     - Family background differences drive most of the observed gaps
 
-- Ashworth, Hotz, Maurel, and Ransom (2020)
+- Ashworth, Hotz, Maurel, and Ransom (2021)
     - Estimate wage returns to schooling and different types of work experience
     - 2 factors: cognitive and "not" cognitive
     - Accounting for selection matters a lot for calculation of returns to schooling
@@ -430,9 +445,9 @@ M &amp;= X\boldsymbol{\beta} + \underbrace{\boldsymbol{\theta}_k\Lambda_k + \bol
 ---
 # References
 .smallest[
-Ashworth, J, V. J. Hotz, A. Maurel, et al. (2020). "Changes across
+Ashworth, J., V. J. Hotz, A. Maurel, et al. (2021). "Changes across
 Cohorts in Wage Returns to Schooling and Early Work Experiences". In:
-_Journal of Labor Economics_. DOI:
+_Journal of Labor Economics_ 39.4, pp. 931-964. DOI:
 [10.1086/711851](https://doi.org/10.1086%2F711851).
 
 Aucejo, E. M. and J. James (2019). "Catching Up to Girls: Understanding
@@ -440,17 +455,17 @@ the Gender Imbalance in Educational Attainment Within Race". In:
 _Journal of Applied Econometrics_ 34.4, pp. 502-525. DOI:
 [10.1002/jae.2699](https://doi.org/10.1002%2Fjae.2699).
 
-Chen, X, H. Hong, and D. Nekipelov (2011). "Nonlinear Models of
+Chen, X., H. Hong, and D. Nekipelov (2011). "Nonlinear Models of
 Measurement Errors". In: _Journal of Economic Literature_ 49.4, pp.
 901-937. DOI:
 [10.1257/jel.49.4.901](https://doi.org/10.1257%2Fjel.49.4.901).
 
-Cunha, F, J. J. Heckman, and S. M. Schennach (2010). "Estimating the
+Cunha, F., J. J. Heckman, and S. M. Schennach (2010). "Estimating the
 Technology of Cognitive and Noncognitive Skill Formation". In:
 _Econometrica_ 78.3, pp. 883-931. DOI:
 [10.3982/ECTA6551](https://doi.org/10.3982%2FECTA6551).
 
-Heckman, J. J, J. Stixrud, and S. Urzua (2006). "The Effects of
+Heckman, J. J., J. Stixrud, and S. Urzua (2006). "The Effects of
 Cognitive and Noncognitive Abilities on Labor Market Outcomes and
 Social Behavior". In: _Journal of Labor Economics_ 24.3, pp. 411-482.
 DOI: [10.1086/504455](https://doi.org/10.1086%2F504455).
@@ -511,6 +526,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
