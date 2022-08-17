@@ -92,19 +92,32 @@ Some of today's material is based on [these excellent slides](http://www.econ.ya
 
 ---
 
-# Two types of empirical work in econ `r Citep(biblio,"haile2019")`
+# Three types of empirical work in econ `r Citep(biblio,"haile2019")`
 
-1. .hi[Descriptive]
+1. .hi[Measurement]
    
     - Document facts about observable quantities
-    - These facts sometimes suggest a causal relationship
-    - e.g. raw earnings difference between college graduates and HS graduates
+    - e.g. what is the average earnings difference between college and HS graduates?
   
-2. .hi[Structural]
+2. .hi[Model Testing]
+
+    - test a theoretical model's results against actual data
+    - e.g. does Bayesian Nash Equilibirium explain bidding at oil auctions?
+
+3. .hi[Model Estimation for Counterfactuals]
 
     - Estimate parameters of a _data generating process_ (DGP) which are assumed to be invariant to policy changes or other counterfactuals
-    - Once we know the DGP, we can make causal inferences
-    - e.g. estimate a DGP that specifies how cognitive ability and family background relate to the decision to enroll in college and to post-graduation earnings
+    - e.g. by how much would prices rise if two firms merged?
+
+---
+
+# Trading off assumptions and results
+
+Below is a nice illustration of how stronger assumptions lead to stronger conclusions `r Citep(biblio,"mahoney2022")`
+
+.center[
+![Tradeoff](mahoney2022.png)
+]
 
 ---
 
