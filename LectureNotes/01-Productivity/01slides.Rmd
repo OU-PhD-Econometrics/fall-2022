@@ -53,12 +53,13 @@ class: title-slide
 
 Necessary things to download for this course:
 
-- [Julia or JuliaPro](https://julialang.org/downloads/)
+- [Julia](https://julialang.org/downloads/)
 
 - [Git](https://git-scm.com/downloads)
 
 - Create a [GitHub](https://github.com) account if you don't already have one
 
+- [Visual Studio Code](https://code.visualstudio.com/download)
 
 ---
 
@@ -286,7 +287,7 @@ println("β-hat is $(round(bbeta_hat[1],digits=3)) and the true β is $(round(bb
 
 - You will be given a list of required packages at the top of every problem set
 
-- (Note: package installation in Julia can take sometimes quite awhile)
+- (Note: package installation in Julia can sometimes take quite awhile)
 
 
 ---
@@ -337,7 +338,7 @@ println("β-hat is $(round(bbeta_hat[1],digits=3)) and the true β is $(round(bb
 
 - You also want to have things set up so that when you inevitably make a mistake, it will be easy to identify and resolve
 
-- A great intro to programming practices is [Gentzkow and Shapiro's guide](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf).
+- A great intro to programming practices is [Gentzkow and Shapiro's guide](https://web.stanford.edu/~gentzkow/research/CodeAndData.pdf)
 
 - This guide emphasizes the following principles:
 
@@ -400,11 +401,11 @@ println("β-hat is $(round(bbeta_hat[1],digits=3)) and the true β is $(round(bb
 
 - Or you can access Git via VS Code
 
-- Or you can just post updates directly to the GitHub website
+- Or you can just post updates manually to the GitHub website
 
 ---
 
-# Git vocab
+# Git terminology
 
 - .hi-crimson[Repository:] A folder of code files
 
@@ -420,7 +421,7 @@ println("β-hat is $(round(bbeta_hat[1],digits=3)) and the true β is $(round(bb
 
 There are four main git operations:
 
-- .hi-crimson[Add:] Tell Git which changes you want to add to the repository's history
+- .hi-crimson[Add (Stage):] Tell Git which changes you want to add to the repository's history
 
 - .hi-crimson[Commit:] Officially etch the added changes into the repository's history
 
@@ -436,8 +437,10 @@ There are four main git operations:
 
 - .hi-crimson[Merge:] Combining two branches into one
 
+- .hi-crimson[Fetch:] Download a branch but don't merge it (pull $\equiv$ fetch and then merge)
+
 - .hi-crimson[Pull request:] When you propose changes to a repository you don't own
-    - i.e. you "request" that another user "pull" (and merge) your branch of their repository, where you have made some changes to their repository
+    - i.e. you "request" that another user "pull" (i.e. fetch and merge) your branch of their repository, where you have made some changes to their repository
 
 ---
 
