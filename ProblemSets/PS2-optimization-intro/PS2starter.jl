@@ -6,6 +6,8 @@ f(x) = -x[1]^4-10x[1]^3-2x[1]^2-3x[1]-2
 minusf(x) = x[1]^4+10x[1]^3+2x[1]^2+3x[1]+2
 startval = rand(1)   # random starting value
 result = optimize(minusf, startval, BFGS())
+println("argmin (minimizer) is ",Optim.minimizer(result)[1])
+println("min is ",Optim.minimum(result))
 
 
 #:::::::::::::::::::::::::::::::::::::::::::::::::::
