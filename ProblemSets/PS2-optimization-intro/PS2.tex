@@ -65,33 +65,36 @@ startval = rand(1)  # random number as starting value
 result = optimize(negf, startval, LBFGS())
 \end{minted}
 
-The output printed in the REPL is
+The output printed in the REPL will be something like (but not exactly, since starting values may differ)
 \begin{minted}[bgcolor=bg]{julia}
- * Status: success
+ * Status: success (objective increased between iterations)
 
  * Candidate solution
-    Minimizer: [-7.38e+00]
-    Minimum:   -9.643134e+02
+    Final objective value:     -9.643134e+02
 
  * Found with
-    Algorithm:     L-BFGS
-    Initial Point: [2.39e-01]
+    Algorithm:     BFGS
 
  * Convergence measures
-    |x - x'|               = 4.44e-06 <= 0.0e+00
-    |x - x'|/|x'|          = 6.02e-07 <= 0.0e+00
-    |f(x) - f(x')|         = 2.12e-09 <= 0.0e+00
-    |f(x) - f(x')|/|f(x')| = 2.20e-12 <= 0.0e+00
-    |g(x)|                 = 5.09e-09 <= 1.0e-08
+    |x - x'|               = 1.81e-11 > 0.0e+00
+    |x - x'|/|x'|          = 2.45e-12 > 0.0e+00
+    |f(x) - f(x')|         = 3.41e-13 > 0.0e+00
+    |f(x) - f(x')|/|f(x')| = 3.54e-16 > 0.0e+00
+    |g(x)|                 = 8.91e-09 < 1.0e-08
 
  * Work counters
     Seconds run:   0  (vs limit Inf)
     Iterations:    6
-    f(x) calls:    21
-    nablaf(x) calls:   21
+    f(x) calls:    27
+    Nablaf(x) calls:   27
 \end{minted}
 
-And we can see that the optimal value of $x$ is -7.38 and the maximum is $\text{-}\left(\text{-}9.643\times 10^2\right)=964.3$
+And we can see the maximum is $\text{-}\left(\text{-}9.643\times 10^2\right)=964.3$. To get the optimizer, we have to issue a call at the REPL:
+\begin{minted}[bgcolor=bg]{julia}
+julia> println(result.minimizer)
+[-7.378243405529116]
+\end{minted}
+which shows that the argmax is at $\approx$-7.38.
 
 \item Now that we're familiar with how \texttt{Optim}'s \texttt{optimize()} function works, lets try it on some real-world data. 
 
@@ -105,7 +108,7 @@ using CSV
 using HTTP
 url = "https://raw.githubusercontent.com/OU-PhD-Econometrics/fall-2022/
 master/ProblemSets/PS1-julia-intro/nlsw88.csv"
-df = CSV.read(HTTP.get(url).body)
+df = CSV.read(HTTP.get(url).body, DataFrame)
 X = [ones(size(df,1),1) df.age df.race.==1 df.collgrad.==1]
 y = df.married.==1
 \end{minted}
