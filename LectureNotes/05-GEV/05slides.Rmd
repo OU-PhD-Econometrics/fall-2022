@@ -357,6 +357,20 @@ P_k&=\frac{\exp(u_k/\lambda_F)\left(\sum_{j\in F}\exp(u_j/\lambda_F)\right)^{\la
 - Overlapping nests explain coexistence of imitative entry and innovative investment
 
 ---
+# Overlapping nests (Ishimaru, 2022)
+
+- `r Citet(biblio,"ishimaru2022")` allows for overlapping nests for colleges and universities in the US
+
+- His model allows for 4 combinations of overlapping nests:
+
+1. All colleges
+2. In- vs. Out-of-state
+3. 2-year vs. 4-year
+4. Public vs. Private
+
+- e.g. 2-yr in-state and 4-yr in-state would be irrelevant alternatives in a traditional nested logit model (where 2-yr/4-yr is the first level and in-/out-of-state is the second level), but they can be in the same nest here.
+
+---
 
 # References
 .smaller[

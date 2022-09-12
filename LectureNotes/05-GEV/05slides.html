@@ -55,7 +55,7 @@ class: title-slide
 
 Many of these slides are based on slides written by Peter Arcidiacono. I use them with his permission.
 
-These slides also heavily follow Chapter 4 of 
+These slides also heavily follow Chapter 4 of Train (2009)
 
 ---
 # Plan for the day
@@ -68,7 +68,7 @@ These slides also heavily follow Chapter 4 of
 
     - multinomial logit and nested logit as special cases
     
-3. 
+3. Bresnahan, Stern, and Trajtenberg (1997)
 
     - allows for correlations across multiple nests
 
@@ -80,11 +80,11 @@ These slides also heavily follow Chapter 4 of
 - This is because of the IIA property of multinomial logit models
 
 &lt;center&gt;
-<div id="htmlwidget-d2dddbb05f6fa07b86df" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
+<div id="htmlwidget-79860452697dcba73c1e" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
 <script>HTMLWidgets.pymChild = new pym.Child();HTMLWidgets.addPostRenderHandler(function(){
                                 setTimeout(function(){HTMLWidgets.pymChild.sendHeight();},100);
                             });</script>
-<script type="application/json" data-for="htmlwidget-d2dddbb05f6fa07b86df">{"x":{"diagram":"\ngraph TD;\nA(Commute Method) --> B(Car);\nA-->C(Red Bus);\nA-->D(Blue Bus);\n"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-79860452697dcba73c1e">{"x":{"diagram":"\ngraph TD;\nA(Commute Method) --> B(Car);\nA-->C(Red Bus);\nA-->D(Blue Bus);\n"},"evals":[],"jsHooks":[]}</script>
 &lt;/center&gt;
 
 ---
@@ -95,11 +95,11 @@ These slides also heavily follow Chapter 4 of
 - Nesting explicitly introduces correlation across alternatives within the same nest
 
 &lt;center&gt;
-<div id="htmlwidget-300a261b32749c058c20" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
+<div id="htmlwidget-80c2817182193a58a79c" style="width:504px;height:504px;" class="DiagrammeR html-widget"></div>
 <script>HTMLWidgets.pymChild = new pym.Child();HTMLWidgets.addPostRenderHandler(function(){
                                 setTimeout(function(){HTMLWidgets.pymChild.sendHeight();},100);
                             });</script>
-<script type="application/json" data-for="htmlwidget-300a261b32749c058c20">{"x":{"diagram":"\ngraph TD;\nA(Commute Method) --> B(Car);\nA-->C(Bus);\nC-->D(Red Bus);\nC-->E(Blue Bus);\n"},"evals":[],"jsHooks":[]}</script>
+<script type="application/json" data-for="htmlwidget-80c2817182193a58a79c">{"x":{"diagram":"\ngraph TD;\nA(Commute Method) --> B(Car);\nA-->C(Bus);\nC-->D(Red Bus);\nC-->E(Blue Bus);\n"},"evals":[],"jsHooks":[]}</script>
 &lt;/center&gt;
 
 ---
@@ -142,7 +142,7 @@ where:
 1. `\(\nu_{ik}+\lambda\epsilon_{ij}\)` is distributed Type I Extreme Value
 2. The `\(\nu\)`'s and the `\(\epsilon\)`'s are independent
 3. `\(\epsilon_{ij}\)` is distributed Type I extreme value
-4. Distribution of `\(\nu_k\)`'s is derived in Theorem 2.1 of 
+4. Distribution of `\(\nu_k\)`'s is derived in Theorem 2.1 of Cardell (1997)
 
 
 ---
@@ -270,7 +270,7 @@ contribution of someone who chose red bus:
 
 
 ---
-# Proposition 1 
+# Proposition 1 (McFadden, 1978)
 Let `\(Y_{j}=e^{u_{j}}\)`. Suppose we have a function `\(G(Y_{1},...,Y_{{J}})\)` that maps from `\(R^{{J}}\)` into `\(R^1\)`
 
 If `\(G\)` satisfies:
@@ -339,7 +339,7 @@ P_k&amp;=\frac{\exp(u_k/\lambda_F)\left(\sum_{j\in F}\exp(u_j/\lambda_F)\right)^
 
 - We can also come up with more general nesting structures
 
--  model 4 overlapping nests for computers:
+- Bresnahan, Stern, and Trajtenberg (1997) model 4 overlapping nests for computers:
 
 1. Branded but not Frontier `\(\{B,NF\}\)`
 2. Generic but Frontier  `\(\{NB,F\}\)`
@@ -351,10 +351,44 @@ P_k&amp;=\frac{\exp(u_k/\lambda_F)\left(\sum_{j\in F}\exp(u_j/\lambda_F)\right)^
 - Overlapping nests explain coexistence of imitative entry and innovative investment
 
 ---
+# Overlapping nests (Ishimaru, 2022)
+
+- Ishimaru (2022) allows for overlapping nests for colleges and universities in the US
+
+- His model allows for 4 combinations of overlapping nests:
+
+1. All colleges
+2. In- vs. Out-of-state
+3. 2-year vs. 4-year
+4. Public vs. Private
+
+- e.g. 2-yr in-state and 4-yr in-state would be irrelevant alternatives in a traditional nested logit model (where 2-yr/4-yr is the first level and in-/out-of-state is the second level), but they can be in the same nest here.
+
+---
 
 # References
 .smaller[
-NULL
+Bresnahan, T. F., S. Stern, and M. Trajtenberg (1997). "Market
+Segmentation and the Sources of Rents from Innovation: Personal
+Computers in the Late 1980s". In: _The RAND Journal of Economics_ 28.0,
+pp. S17-S44. DOI: [10.2307/3087454](https://doi.org/10.2307%2F3087454).
+
+Cardell, N. S. (1997). "Variance Components Structures for the
+Extreme-Value and Logistic Distributions with Application to Models of
+Heterogeneity". In: _Econometric Theory_ 13.2, pp. 185-213. URL:
+[https://www.jstor.org/stable/3532724](https://www.jstor.org/stable/3532724).
+
+Ishimaru, S. (2022). _Geographic Mobility of Youth and Spatial Gaps in
+Local College and Labor Market Opportunities_. Working Paper.
+Hitotsubashi University.
+
+McFadden, D. (1978). "Modelling the Choice of Residential Location".
+In: _Spatial Interaction Theory and Planning Models_. Ed. by A.
+Karlqvist, L. Lundqvist, F. Snickers and J. W. Weibull. Amsterdam:
+North Holland, pp. 75-96.
+
+Train, K. (2009). _Discrete Choice Methods with Simulation_. 2nd ed.
+Cambridge; New York: Cambridge University Press. ISBN: 9780521766555.
 ]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
