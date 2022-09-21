@@ -122,9 +122,18 @@ u_{i,car}&=\beta_2 X_i + \widetilde{\gamma} Z_2 X_i
 - Assume, e.g. $\gamma_i \sim F$ with pdf $f$ and distributional parameters $\mu$ and $\sigma$
 
 - Then the logit choice probabilities become
+.smaller[
 \begin{align*}
-P_{ij}\left(X,Z;\beta,\gamma\right)&= \int\frac{\exp\left(X_{i}\left(\beta_{j}-\beta_{J}\right)+\gamma\left(Z_{ij}-Z_{iJ}\right)\right)}{\sum_k \exp\left(X_{i}\left(\beta_{k}-\beta_{J}\right)+\gamma\left(Z_{ik}-Z_{iJ}\right)\right)}f\left(\gamma;\mu,\sigma\right)d\gamma
+P_{ij}\left(X,Z;\beta,\mu,\sigma\right)&= \int\frac{\exp\left(X_{i}\left(\beta_{j}-\beta_{J}\right)+\gamma_i\left(Z_{ij}-Z_{iJ}\right)\right)}{\sum_k \exp\left(X_{i}\left(\beta_{k}-\beta_{J}\right)+\gamma_i\left(Z_{ik}-Z_{iJ}\right)\right)}f\left(\gamma_i;\mu,\sigma\right)d\gamma_i
 \end{align*}
+]
+
+- Note: this is just like the expected value of a function of a random variable $W$:
+.smaller[
+\begin{align*}
+\mathbb{E}[g(W)]&= \int g(W) f\left(W;\mu,\sigma\right)dW
+\end{align*}
+]
 
 - Annoyance: the log likelihood now has an integral inside the log!
 .smaller[
@@ -339,6 +348,8 @@ q_{is}=&\frac{\pi_s\prod_t\mathcal{L}(Y_{1t}|X_{1t},\alpha_1,s)\mathcal{L}(Y_{2t
 - Why are we doing all of this difficult work?
 
 - Because preference heterogeneity allows for a more credible structural model
+
+    - e.g. `r Citet(biblio,"gillingham_al_jpe")`
 
 - But introducing preference heterogeneity can make the model intractible
 

@@ -85,7 +85,7 @@ Many of these slides are based on slides written by Peter Arcidiacono. I use the
     
     - "Buy/sell/hold" problems (e.g. stock/options trading)
 
-    - Replacement problems (e.g. infrastructure)
+    - Replacement problems (e.g. infrastructure; see `r Citet(biblio,"gillingham_al_jpe")`)
 
 - Optimal stopping problems inherently have a tension between costs and benefits:
 
@@ -307,7 +307,7 @@ u_J(X_{\mathcal{X}})+\beta\int_{X'}\ln\left(\sum_{k\in J}\exp[v_{k}(X')]\right)d
 
 - How is this an optimal stopping problem?
 
-    - The maintenance superintendent ([Harold Zurcher](https://twitter.com/haroldzurcher87)) wants to minimize costs
+    - The maintenance superintendent Harold Zurcher wants to minimize costs
 
     - But he also doesn't want buses to break down while in service
 

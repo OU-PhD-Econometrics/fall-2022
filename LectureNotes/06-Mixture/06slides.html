@@ -28,7 +28,7 @@
 
 
 
-class: title-slide   
+class: title-slide
 
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 
@@ -46,7 +46,7 @@ class: title-slide
 
 Many of these slides are based on slides written by Peter Arcidiacono. I use them with his permission.
 
-These slides also heavily follow Chapters 6 and 14 of 
+These slides also heavily follow Chapters 6 and 14 of Train (2009)
 
 ---
 # Plan for the day
@@ -121,9 +121,18 @@ u_{i,car}&amp;=\beta_2 X_i + \widetilde{\gamma} Z_2 X_i
 - Assume, e.g. `\(\gamma_i \sim F\)` with pdf `\(f\)` and distributional parameters `\(\mu\)` and `\(\sigma\)`
 
 - Then the logit choice probabilities become
+.smaller[
 `\begin{align*}
-P_{ij}\left(X,Z;\beta,\gamma\right)&amp;= \int\frac{\exp\left(X_{i}\left(\beta_{j}-\beta_{J}\right)+\gamma\left(Z_{ij}-Z_{iJ}\right)\right)}{\sum_k \exp\left(X_{i}\left(\beta_{k}-\beta_{J}\right)+\gamma\left(Z_{ik}-Z_{iJ}\right)\right)}f\left(\gamma;\mu,\sigma\right)d\gamma
+P_{ij}\left(X,Z;\beta,\mu,\sigma\right)&amp;= \int\frac{\exp\left(X_{i}\left(\beta_{j}-\beta_{J}\right)+\gamma_i\left(Z_{ij}-Z_{iJ}\right)\right)}{\sum_k \exp\left(X_{i}\left(\beta_{k}-\beta_{J}\right)+\gamma_i\left(Z_{ik}-Z_{iJ}\right)\right)}f\left(\gamma_i;\mu,\sigma\right)d\gamma_i
 \end{align*}`
+]
+
+- Note: this is just like the expected value of a function of a random variable `\(W\)`:
+.smaller[
+`\begin{align*}
+\mathbb{E}[g(W)]&amp;= \int g(W) f\left(W;\mu,\sigma\right)dW
+\end{align*}`
+]
 
 - Annoyance: the log likelihood now has an integral inside the log!
 .smaller[
@@ -308,7 +317,7 @@ where `\(q_{is}\)` is the probability that `\(i\)` belongs to group `\(s\)`
 q_{is}=&amp;\frac{\pi_s\prod_t\mathcal{L}(Y_{1t}|X_{1t},\alpha_1,s)\mathcal{L}(Y_{2t}|X_{2t},\alpha_2,s)}{\sum_m\pi_m\prod_t\mathcal{L}(Y_{1t}|X_{1t},\alpha_1,m)\mathcal{L}(Y_{2t}|X_{2t},\alpha_2,m)}
 \end{align*}`
 
-- Iterate on E and M steps until the `\(q\)`'s converge 
+- Iterate on E and M steps until the `\(q\)`'s converge (Arcidiacono and Jones, 2003)
 
 
 ---
@@ -339,6 +348,8 @@ q_{is}=&amp;\frac{\pi_s\prod_t\mathcal{L}(Y_{1t}|X_{1t},\alpha_1,s)\mathcal{L}(Y
 
 - Because preference heterogeneity allows for a more credible structural model
 
+    - e.g. Gillingham, Iskhakov, Munk-Nielsen, Rust, and Schjerning (2022)
+
 - But introducing preference heterogeneity can make the model intractible
 
 - Discretizing the distribution of heterogeneity and using the EM algorithm can help
@@ -351,7 +362,17 @@ q_{is}=&amp;\frac{\pi_s\prod_t\mathcal{L}(Y_{1t}|X_{1t},\alpha_1,s)\mathcal{L}(Y
 
 # References
 .smaller[
-NULL
+Arcidiacono, P. and J. B. Jones (2003). "Finite Mixture Distributions,
+Sequential Likelihood and the EM Algorithm". In: _Econometrica_ 71.3,
+pp. 933-946. DOI:
+[10.1111/1468-0262.00431](https://doi.org/10.1111%2F1468-0262.00431).
+
+Gillingham, K., F. Iskhakov, A. Munk-Nielsen, et al. (2022).
+"Equilibrium Trade in Automobiles". In: _Journal of Political Economy_.
+DOI: [10.1086/720463](https://doi.org/10.1086%2F720463).
+
+Train, K. (2009). _Discrete Choice Methods with Simulation_. 2nd ed.
+Cambridge; New York: Cambridge University Press. ISBN: 9780521766555.
 ]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
