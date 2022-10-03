@@ -151,7 +151,7 @@ zval,zbin,xval,xbin,xtran = create_grids()
             \item First, initialize the future value array, which should be a 3-dimensional array of zeros. The size of the first dimension should be the total number of grid points (i.e. the number of rows of \texttt{xtran}). The second dimension should be 2, which is the possible outcomes of \texttt{:Branded}. The third dimension should be $T+1$.
             \item Now write four nested \texttt{for} loops over each of the possible states:
             \begin{itemize}
-                \item Loop backwards over \texttt{t} from $T+1$ to 1
+                \item Loop backwards over \texttt{t} from $T$ to 1
                 \item Loop over the two possible brand states $\{0,1\}$
                 \item Loop over the possible permanent route usage states (i.e. from 1 to \texttt{zbin})
                 \item Loop over the possible odometer states (i.e. from 1 to \texttt{xbin})
