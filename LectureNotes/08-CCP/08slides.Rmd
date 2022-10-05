@@ -98,7 +98,7 @@ implying that:
 - The inversion theorem of Hotz and Miller says that there exists a mapping, $\psi$, from the conditional choice probabilities, the $p$'s, into the differences in the conditional valuation functions, $v_j-v_k$:
 \begin{align*}
 V_{t+1}&=v_{0t+1}+\mathbb{E}\max\{\epsilon_{0t+1},v_{1t+1}+\epsilon_{1t+1}-v_{0t+1},...,\\
-&\phantom{\text{----}}v_{{J}t+1}+\epsilon_{{J}t+1}-v_{0t+1}\}\\
+&\phantom{\text{-------------------------------}}v_{{J}t+1}+\epsilon_{{J}t+1}-v_{0t+1}\}\\
 V_{t+1}&=v_{0t+1}+\mathbb{E}\max\{\epsilon_{0t+1},\psi_0^1(p_{t+1})+\epsilon_{1t+1},...,\psi_0^{{J}}(p_{t+1})+\epsilon_{{J}t+1}\}
 \end{align*}
 
@@ -340,7 +340,7 @@ v_1(x)-v_0(x)&=u_1(x)-u_0(x)+\beta\left[\sum_{x'}\left(\ln[p_1(x)]-\ln[p_1(0)]\r
 
 - Recent examples:
     - `r Citet(biblio,"arcidiacono_al2016")` – see equation (29)
-    - `r Citet(biblio,"ransom2019")` – see equation (A.14) and Figures A4 and A5
+    - `r Citet(biblio,"ransom2022")` – see equation (A.14) and Figures A4 and A5
 
 ---
 
