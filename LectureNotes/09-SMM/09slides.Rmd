@@ -406,7 +406,7 @@ where $\mathbf{\varepsilon} \sim MVN\left(\mathbf{0},I\right)$. Thus, the $\beta
 using SMM, DataFrames
 MA = SMM.parallelNormal() # Note: this line may take up to 5 minutes to execute
 dc = SMM.history(MA.chains[1])
-dc = dc[dc[:accepted].==true, :]
+dc = dc[dc[!,:accepted].==true, :]
 println(describe(dc))
 ```
 
