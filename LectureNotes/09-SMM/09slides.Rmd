@@ -259,7 +259,7 @@ println(α̂_optim.minimizer)
 
 - Coding for simulating the model is already done! Can dive right into counterfactuals
 
-- It's straightforward to interpret the moments and know that model is fitting these
+- It's straightforward to interpret the moments and know the model is fitting these
 
 - Also easier to compare with reduced-form evidence
 
