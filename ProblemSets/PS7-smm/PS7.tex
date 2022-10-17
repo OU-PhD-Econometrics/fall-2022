@@ -11,6 +11,7 @@
 \geometry{verbose,tmargin=1in,bmargin=1in,lmargin=1in,rmargin=1in}
 \usepackage{amsmath}
 \usepackage[authoryear]{natbib}
+\usepackage{ulem}
 \usepackage{minted}
 \usepackage{mathtools}
 \definecolor{bg}{rgb}{0.95,0.95,0.95}
@@ -76,7 +77,7 @@ In this problem set, we will practice estimating models by Generalized Method of
         \end{itemize}
     \item An alternative way to generate choices would be to draw a $N\times J$ matrix of $\epsilon$'s from a T1EV distribution. This distribution is already defined in the \texttt{Distributions} package. Then $Y_i = \arg \max_{j} X_i \beta_j + \epsilon_{ij}$. I'll show you an example of how to do that in the solutions code for this problem set.
     \end{enumerate}
-\item Use \texttt{SMM.jl} to run the example code on slide \#21 of the Lecture 9 slide deck.
+\item \sout{Use \texttt{SMM.jl} to run the example code on slide \#21 of the Lecture 9 slide deck.}
 
 \item Re-estimate multinomial logit model from Question 2 using SMM. It will be helpful to use the code example from slide \#18 of the Lecture 9 slide deck. You will also want to make use of your code from Question 3 to do this. (You can't do this question without using the code from Question 3.)
 
