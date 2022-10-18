@@ -71,7 +71,7 @@ In this problem set, we will practice estimating models that require dimension r
     
     \texttt{asvabPCA = MultivariateStats.transform(M, asvabMat)}.
     
-    Again, \texttt{asvabFac} is a $1 \times N$ array. You will need to reshape this array to add it as a covariate to your regression model.
+    Again, \texttt{asvabPCA} is a $1 \times N$ array. You will need to reshape this array to add it as a covariate to your regression model.
 \end{itemize}
 
 \item Repeat question 4, but use \texttt{FactorAnalysis} instead of \texttt{PCA} (the syntax should be exactly the same)
@@ -85,7 +85,7 @@ The measurement system is specified as follows:
     \log(wage) &= \beta_0 + \beta_1 black + \beta_2 hispanic + \beta_3 female + \beta_4 school + \\
     &\phantom{\text{==}}\beta_5 gradHS + \beta_6 grad4yr + \delta \xi + \varepsilon\nonumber
 \end{align}
-where $\xi$ is a person-specific random factor that is assumed to be drawn from a standard normal distribution.
+where $\xi$ is a person-specific random factor that is assumed to be drawn from a standard normal distribution. If we could observe $\xi$, it would be an $N$-length vector (same as $\log(wage)$ and each of the $asvab_j$'s).
 
 The likelihood function for each observation of this system of equations is given by
 \begin{align}
@@ -98,7 +98,7 @@ As mentioned above, $\xi_i$ is a random factor that is distributed standard norm
     \ell &= \sum_i \log\left(\int \mathcal{L}_i \text{d} F\left(\xi\right)\right)
 \end{align}
 
-I recommend using Gauss-Legendre quadrature (see Problem Set 4) to estimate this integral. 
+I recommend using Gauss-Legendre quadrature (see Problem Set 4) to approximate this integral. 
 
 \end{enumerate}
 \end{document}
