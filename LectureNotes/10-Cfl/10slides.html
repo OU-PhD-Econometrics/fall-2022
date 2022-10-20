@@ -4,6 +4,7 @@
     <title>Lecture 10</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tyler Ransom" />
+    <script src="10slides_files/header-attrs-2.14/header-attrs.js"></script>
     <link href="10slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="10slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="10slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -23,17 +24,23 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+
+
+
+class: title-slide
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 # Lecture 10
+
 ## Model Fit, Validation and Counterfactual Simulations
+
 ### Tyler Ransom
+
 ### ECON 6343, University of Oklahoma
 
 ---
-
-
-
 
 # Plan for the Day
 
@@ -305,10 +312,10 @@ Machine learning is all about automating two hand-in-hand processes:
 - Arcidiacono, Aucejo, Maurel, and Ransom (2016)
     - How would human capital investment change if there were perfect information?
     
-- Arcidiacono, Kinsler, and Ransom (2019)
+- Arcidiacono, Kinsler, and Ransom (2022)
     - Would Harvard become less white if it were to eliminate legacy admissions?
     
-- Ransom (2019)
+- Ransom (2022)
     - Would American workers move to a new city if they were paid $10,000 to do so?
     
 - Caucutt, Lochner, Mullins, and Park (2020)
@@ -514,10 +521,9 @@ Attrition and the Dynamics of Information Revelation_. Working Paper.
 Duke University. URL:
 [https://tyleransom.github.io/research/CollegeDropout2016May31.pdf](https://tyleransom.github.io/research/CollegeDropout2016May31.pdf).
 
-Arcidiacono, P., J. Kinsler, and T. Ransom (2019). _Legacy and Athlete
-Preferences at Harvard_. Working Paper 26316. National Bureau of
-Economic Research. DOI:
-[10.3386/w26316](https://doi.org/10.3386%2Fw26316).
+Arcidiacono, P., J. Kinsler, and T. Ransom (2022). "Legacy and Athlete
+Preferences at Harvard". In: _Journal of Labor Economics_ 40.1, pp.
+133-156. DOI: [10.1086/713744](https://doi.org/10.1086%2F713744).
 
 Caucutt, E. M., L. Lochner, J. Mullins, et al. (2020). _Child Skill
 Production: Accounting for Parental and Market-Based Time and Goods
@@ -529,7 +535,7 @@ Expected Earnings, Nonpecuniary Outcomes, and Financial Constraints".
 In: _Journal of Political Economy_ 127.5, pp. 2343-2393. DOI:
 [10.1086/701808](https://doi.org/10.1086%2F701808).
 
-Fu, C., N. Grau, and J. Rivera (2020). _Wandering Astray: Teenagersâ€™
+Fu, C., N. Grau, and J. Rivera (2020). _Wandering Astray: Teenagers'
 Choices of Schooling and Crime_. Working Paper. University of
 Wisconsin-Madison. URL:
 [https://www.ssc.wisc.edu/~cfu/wander.pdf](https://www.ssc.wisc.edu/~cfu/wander.pdf).
@@ -538,9 +544,10 @@ Lang, K. and M. D. Palacios (2018). _The Determinants of Teachers'
 Occupational Choice_. Working Paper 24883. National Bureau of Economic
 Research. DOI: [10.3386/w24883](https://doi.org/10.3386%2Fw24883).
 
-Ransom, T. (2019). _Labor Market Frictions and Moving Costs of the
-Employed and Unemployed_. Discussion Paper 12139. IZA. URL:
-[http://ftp.iza.org/dp12139.pdf](http://ftp.iza.org/dp12139.pdf).
+Ransom, T. (2022). "Labor Market Frictions and Moving Costs of the
+Employed and Unemployed". In: _Journal of Human Resources_ 57.S, pp.
+S137-S166. DOI:
+[10.3368/jhr.monopsony.0219-10013R2](https://doi.org/10.3368%2Fjhr.monopsony.0219-10013R2).
 
 Rust, J. (1987). "Optimal Replacement of GMC Bus Engines: An Empirical
 Model of Harold Zurcher". In: _Econometrica_ 55.5, pp. 999-1033. URL:
@@ -594,6 +601,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

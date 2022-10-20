@@ -285,10 +285,10 @@ Machine learning is all about automating two hand-in-hand processes:
 - `r Citet(biblio,"arcidiacono_al2016")`
     - How would human capital investment change if there were perfect information?
     
-- `r Citet(biblio,"akr_legacy2019")`
+- `r Citet(biblio,"akr_legacy2022")`
     - Would Harvard become less white if it were to eliminate legacy admissions?
     
-- `r Citet(biblio,"ransom2019")`
+- `r Citet(biblio,"ransom2022")`
     - Would American workers move to a new city if they were paid $10,000 to do so?
     
 - `r Citet(biblio,"caucutt_al2020")`
