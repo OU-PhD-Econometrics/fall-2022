@@ -343,7 +343,7 @@ where $\tilde{P}$ is the recoded probability and $\eta_{i1}$ is the difference i
 
 
 ---
-# Example from Kosar et al. (2020)
+# Example from Kosar et al. (2022)
 
 .center[![pref-het](histo_wtp_family.jpg)]
 
@@ -380,7 +380,7 @@ where $\tilde{P}$ is the recoded probability and $\eta_{i1}$ is the difference i
 
 - `r Citet(biblio,"delavandeZafar2019")`
 
-- `r Citet(biblio,"kosar_al2020")`
+- `r Citet(biblio,"kosar_al2022")`
 
 - Many others
 
@@ -388,7 +388,7 @@ where $\tilde{P}$ is the recoded probability and $\eta_{i1}$ is the difference i
 ---
 # How to estimate probabilstic choice models in Julia
 
-- We can read in data from `r Citet(biblio,"kosar_al2020")`
+- We can read in data from `r Citet(biblio,"kosar_al2022")`
 
 - Each pair of adjacent rows is a choice scenario
 

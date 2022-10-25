@@ -4,7 +4,7 @@
     <title>Lecture 11</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tyler Ransom" />
-    <script src="11slides_files/header-attrs-2.10/header-attrs.js"></script>
+    <script src="11slides_files/header-attrs-2.14/header-attrs.js"></script>
     <link href="11slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="11slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="11slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -24,17 +24,23 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+
+
+
+class: title-slide
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 # Lecture 11
+
 ## Subjective Expectations and Stated Preferences
+
 ### Tyler Ransom
+
 ### ECON 6343, University of Oklahoma
 
 ---
-
-
-
 
 # Plan for the Day
 
@@ -336,7 +342,7 @@ where `\(\tilde{P}\)` is the recoded probability and `\(\eta_{i1}\)` is the diff
 
 
 ---
-# Example from Kosar et al. (2020)
+# Example from Kosar et al. (2022)
 
 .center[![pref-het](histo_wtp_family.jpg)]
 
@@ -373,9 +379,7 @@ where `\(\tilde{P}\)` is the recoded probability and `\(\eta_{i1}\)` is the diff
 
 - Delavande and Zafar (2019)
 
-- Kosar, Ransom, and van
-der
-Klaauw (2020)
+- Kosar, Ransom, and van der Klaauw (2022)
 
 - Many others
 
@@ -383,9 +387,7 @@ Klaauw (2020)
 ---
 # How to estimate probabilstic choice models in Julia
 
-- We can read in data from Kosar, Ransom, and van
-der
-Klaauw (2020)
+- We can read in data from Kosar, Ransom, and van der Klaauw (2022)
 
 - Each pair of adjacent rows is a choice scenario
 
@@ -470,10 +472,10 @@ Expected Earnings, Nonpecuniary Outcomes, and Financial Constraints".
 In: _Journal of Political Economy_ 127.5, pp. 2343-2393. DOI:
 [10.1086/701808](https://doi.org/10.1086%2F701808).
 
-Kosar, G., T. Ransom, and W. van der Klaauw (2020). _Understanding
-Migration Aversion Using Elicited Counterfactual Choice Probabilities_.
-Working Paper 8117. CESifo. URL:
-[https://www.cesifo.org/DocDL/cesifo1_wp8117_0.pdf](https://www.cesifo.org/DocDL/cesifo1_wp8117_0.pdf).
+Kosar, G., T. Ransom, and W. van der Klaauw (2022). "Understanding
+Migration Aversion Using Elicited Counterfactual Choice Probabilities".
+In: _Journal of Econometrics_ 231.1, pp. 123-147. DOI:
+[10.1016/j.jeconom.2020.07.056](https://doi.org/10.1016%2Fj.jeconom.2020.07.056).
 
 Rust, J. (1987). "Optimal Replacement of GMC Bus Engines: An Empirical
 Model of Harold Zurcher". In: _Econometrica_ 55.5, pp. 999-1033. URL:
@@ -532,6 +534,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
