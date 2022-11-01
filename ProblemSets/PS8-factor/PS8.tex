@@ -78,7 +78,7 @@ In this problem set, we will practice estimating models that require dimension r
 
 \item Now estimate the full measurement system using either maximum likelihood or simulated method of moments. (You can take your pick, but I recommend using MLE.) 
 
-The measurement system is specified as follows:
+The measurement system and log wage equation are specified as follows:
 
 \begin{align}
     asvab_j &= \alpha_{0j} + \alpha_{1j} black + \alpha_{2j} hispanic + \alpha_{3j} female + \gamma_j\xi + \varepsilon_j \\
@@ -89,7 +89,7 @@ where $\xi$ is a person-specific random factor that is assumed to be drawn from 
 
 The likelihood function for each observation of this system of equations is given by
 \begin{align}
-    \mathcal{L}_i &= \left\{\prod_j \frac{1}{\sigma_j}\phi\left(\frac{M_{ij} - X^m_{i}\alpha_j - \gamma_j \xi_i}{\sigma_j}\right)\right\}\frac{1}{\sigma_w}\phi\left(\frac{y_i - X_{i}\beta - \delta_j \xi_i}{\sigma_w}\right)
+    \mathcal{L}_i &= \left\{\prod_j \frac{1}{\sigma_j}\phi\left(\frac{M_{ij} - X^m_{i}\alpha_j - \gamma_j \xi_i}{\sigma_j}\right)\right\}\frac{1}{\sigma_w}\phi\left(\frac{y_i - X_{i}\beta - \delta \xi_i}{\sigma_w}\right)
 \end{align}
 where $\phi\left(\cdot\right)$ is the standard normal pdf. $M_j$ is an $N\times 1$ vector of ASVAB scores for ASVAB$_j$. $X^m$ is a matrix with $N$ rows and the following columns: an intercept, and dummies for black, hispanic and female. $y$ is the log wage and $X$ is the $N\times K$ covariate matrix in question \#1. The $\sigma$'s are variance parameters to be estimated.
 
@@ -98,7 +98,7 @@ As mentioned above, $\xi_i$ is a random factor that is distributed standard norm
     \ell &= \sum_i \log\left(\int \mathcal{L}_i \text{d} F\left(\xi\right)\right)
 \end{align}
 
-I recommend using Gauss-Legendre quadrature (see Problem Set 4) to approximate this integral. 
+I recommend using Gauss-Legendre quadrature (see Problem Set 4) to approximate this integral, but you could also use Monte Carlo integration. 
 
 \end{enumerate}
 \end{document}
