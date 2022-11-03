@@ -4,6 +4,7 @@
     <title>Lecture 13</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tyler Ransom" />
+    <script src="13slides_files/header-attrs-2.14/header-attrs.js"></script>
     <link href="13slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="13slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="13slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -23,17 +24,23 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+
+
+
+class: title-slide
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 # Lecture 13
+
 ## Learning Models
+
 ### Tyler Ransom
+
 ### ECON 6343, University of Oklahoma
 
 ---
-
-
-
 
 # Plan for the Day
 
@@ -479,7 +486,7 @@ R of COVID-19: A New Real-Time Estimation Using the Kalman Filter_.
 Working Paper. medRxiv. DOI:
 [10.1101/2020.04.19.20071886](https://doi.org/10.1101%2F2020.04.19.20071886).
 
-Brien, M. J, L. A. Lillard, and S. Stern (2006). "Cohabitation,
+Brien, M. J., L. A. Lillard, and S. Stern (2006). "Cohabitation,
 Marriage, and Divorce in a Model of Match Quality". In: _International
 Economic Review_ 47.2, pp. 451-494. DOI:
 [10.1111/j.1468-2354.2006.00385.x](https://doi.org/10.1111%2Fj.1468-2354.2006.00385.x).
@@ -563,6 +570,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
