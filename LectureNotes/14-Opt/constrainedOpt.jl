@@ -10,7 +10,7 @@ end
 function wrapper()
     # Let's read in the data from PS8
     url = "https://raw.githubusercontent.com/OU-PhD-Econometrics/fall-2020/master/ProblemSets/PS8-factor/nlsy.csv"
-    df = CSV.read(HTTP.get(url).body)
+    df = CSV.read(HTTP.get(url).body, DataFrame)
     X = [df.black df.hispanic df.female df.schoolt df.gradHS df.grad4yr ones(size(df,1),1)]
     y = df.logwage
 
@@ -347,7 +347,7 @@ function wrapper()
     end
 
     url = "https://raw.githubusercontent.com/OU-PhD-Econometrics/fall-2020/master/ProblemSets/PS4-mixture/nlsw88t.csv"
-    dff = CSV.read(HTTP.get(url).body)
+    dff = CSV.read(HTTP.get(url).body, DataFrame)
     XX = [dff.age dff.white dff.collgrad]
     ZZ = cat(dff.elnwage1, dff.elnwage2, dff.elnwage3, dff.elnwage4, 
              dff.elnwage5, dff.elnwage6, dff.elnwage7, dff.elnwage8; dims=3)

@@ -196,7 +196,7 @@ using JuMP, Ipopt, Optim, LineSearches, LinearAlgebra, SparseArrays, Distributio
 
 # Let's read in the data from PS8
 url = "https://raw.githubusercontent.com/OU-PhD-Econometrics/fall-2021/master/ProblemSets/PS8-factor/nlsy.csv"
-df = CSV.read(HTTP.get(url).body)
+df = CSV.read(HTTP.get(url).body, DataFrame)
 X = [df.black df.hispanic df.female df.schoolt df.gradHS df.grad4yr ones(size(df,1),1)]
 y = df.logwage
 
@@ -591,7 +591,7 @@ results.se_optim_cns2   = vcat(θ̂_mle_optim_ad_se,missing)
 end
 
 url = "https://raw.githubusercontent.com/OU-PhD-Econometrics/fall-2021/master/ProblemSets/PS4-mixture/nlsw88t.csv"
-dff = CSV.read(HTTP.get(url).body)
+dff = CSV.read(HTTP.get(url).body, DataFrame)
 XX  = [dff.age dff.white dff.collgrad]
 ZZ  = cat(dff.elnwage1, dff.elnwage2, dff.elnwage3, dff.elnwage4,
          dff.elnwage5, dff.elnwage6, dff.elnwage7, dff.elnwage8; dims=3)
@@ -673,13 +673,10 @@ q^* &= \frac{a-c}{b(N+1)}, & P^* &= \frac{a+Nc}{N+1}
 .scroll-box-12[
 ```{julia,eval=F}
 using JuMP, Ipopt, Complementarity
-
 # simplified version of cournot demo (linear demand, symmetric costs)
-function cournot_symm(N = 7, mc = 20, a=100, b=2, L = 1000)
-
+function cournot_symm(; N = 7, mc = 20, a=100, b=2, L = 1000)
     c = mc*ones(N)
     m = Model(Ipopt.Optimizer)
-
     @variable(m, 0 <= x <= L) # firm 1 output
     @variable(m, y[1:N-1])    # other firms' output
     @variable(m, l[1:N-1])    # legrange multipliers
@@ -687,15 +684,11 @@ function cournot_symm(N = 7, mc = 20, a=100, b=2, L = 1000)
     @constraint(m, Q == x+sum(y[i] for i in 1:N-1))
     @constraint(m, x == y[1])
     @NLobjective(m, Min, c[1]*x - x*( a - b*Q ) ) # firm 1's objective
-
     @NLconstraint(m, cnstr[i=1:N-1], 0 == ( c[i+1] ) - ( a - b*Q ) - y[i]*( -b ) - l[i] ) # other firms' FOCs
-
     for i in 1:N-1
         @complements(m, l[i], 0 <= y[i] <= L, smooth)
     end
-
     optimize!(m)
-
     @show getobjectivevalue(m)
     @show getvalue.(x)
     @show getvalue.(y)
@@ -706,7 +699,7 @@ function cournot_symm(N = 7, mc = 20, a=100, b=2, L = 1000)
     return P
 end
 P7  = cournot_symm()
-P17 = cournot_symm(17)
+P17 = cournot_symm(L=17)
 ```
 ]
 
