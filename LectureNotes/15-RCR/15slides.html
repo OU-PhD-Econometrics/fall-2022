@@ -4,6 +4,7 @@
     <title>Lecture 15</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tyler Ransom" />
+    <script src="15slides_files/header-attrs-2.14/header-attrs.js"></script>
     <link href="15slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="15slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="15slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -23,17 +24,23 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+
+
+
+class: title-slide
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 # Lecture 15
+
 ## Causality without a valid identification strategy
+
 ### Tyler Ransom
+
 ### ECON 6343, University of Oklahoma
 
 ---
-
-
-
 
 # Plan for the Day
 
@@ -105,7 +112,7 @@ class: center, middle, inverse, title-slide
 y &amp;= \alpha d + X\beta + \varepsilon
 \end{align*}`
 
-- We want to estimate `\(\alpha\)` such that we can infer causality of `\(d\)` on `\(y\)`
+- We want to estimate `\(\alpha\)` such that we can infer causality of treatment `\(d\)` on `\(y\)`
 
 - But since we only have observational data, this is a tall task
 
@@ -121,7 +128,7 @@ y &amp;= \alpha d + X\beta + \varepsilon
 ---
 # Intuition
 
-- Thinking again about our model,
+- Thinking again about our model (and assume `\(X\)` includes an intercept),
 
 `\begin{align*}
 y &amp;= \alpha d + X\beta + \varepsilon
@@ -227,15 +234,140 @@ Corr(d, \varepsilon) = \lambda Corr(d, X\beta)
 
 
 ---
+# Diegert, Masten, and Poirier (2022)
+
+- The three prior papers each assume that `\(Corr(X, \varepsilon) = 0\)`
+
+- i.e. the `\(X\)`'s (control variables) are themselves exogenous
+
+- But this is rarely true in practice
+
+- Propose thinking about an extended model:
+
+`\begin{align*}
+y &amp;= \alpha d + X\beta + \underbrace{W\gamma + \nu}_{ = \varepsilon}
+\end{align*}`
+where `\(W\)` represents unobservable variables and `\(\nu\)` is a pure error term
+
+- Other methods allow `\(d\)` and `\(W\)` to be correlated through `\(Corr(d, \varepsilon)\)` 
+
+- but do not allow `\(X\)` and `\(W\)` to be correlated
+
+---
+# Terminology of Diegert, Masten, and Poirier (2022)
+
+- .hi[long regression:] regress `\(Y\)` on `\(d\)`, `\(X\)` and `\(W\)`
+
+    - this is the regression we want to run but can't because `\(W\)` is unobserved
+
+- .hi[medium regression:] regress `\(Y\)` on `\(d\)` and `\(X\)`
+
+    - this is the regression we can run, but which may be of limited use
+
+- `\(\alpha_{\text{long}}\)` is the true treatment effect, but `\(\alpha_{\text{med}}\)` is the one we can feasibly estimate
+
+- .hi[breakdown point:] largest magnitude of selection on unobservables relative to observables needed to overturn a specific baseline finding
+
+- the breakdown point is a single number that summarizes a study's robustness to selection on unobservables while also allow for the `\(X\)`'s to be endogenous
+
+---
+# Sensitivity parameters
+
+- There are three sensitivity parameters `\((\overline{r}_X, \overline{r}_Y, \overline{c})\)` which are defined as follows:
+
+`\(\overline{r}_X\)` measures how correlated treatment is to the index of unobservables compared to the index of observables
+
+`\begin{align*}
+Corr(d, W\gamma) &amp;\leq \overline{r}_X Corr(d, X\beta)
+\end{align*}`
+
+`\(\overline{r}_y\)` measures how correlated the outcome is to the index of unobservables compared to the index of observables
+
+`\begin{align*}
+Corr(y, W\gamma) &amp;\leq \overline{r}_Y Corr(y, X\beta)
+\end{align*}`
+
+`\(\overline{c}\)` measures the partial `\(R^2\)` of `\(W\)` above and beyond `\(X\)` in the long regression
+`\begin{align*}
+\text{partial  }R^2_{W,X} &amp;\leq \overline{c}
+\end{align*}`
+
+---
+# Breakdown point
+
+- The .hi[breakdown point] `\(\overline{r}_{X}^{\text{bp}}\)` is the largest value of `\(\overline{r}_X\)` such that `\(\alpha_{\text{long}}\)` would be 0
+
+- The formula for `\(\overline{r}_{X}^{\text{bp}}\)` is a function of `\(R^2_{Y\sim d \cdot X}\)` and partial `\(R^2\)` terms:
+
+`\begin{align*}
+\overline{r}_{X}^{\text{bp}} &amp; = \left( \frac{R^2_{Y\sim d \cdot X}}{ \frac{R^2_{d\sim X}}{1 - R^2_{d\sim X}} + R^2_{Y\sim d \cdot X}  } \right)^{\frac{1}{2}}
+\end{align*}`
+
+where `\(R^2_{Y\sim d \cdot X}\)` means "the `\(R^2\)` from a regression of `\(y\)` on `\(d\)` and `\(X\)`"
+
+In other words,
+`\begin{align*}
+\text{Selection on Unobservables} &amp; = r \cdot (\text{Selection on Observables})
+\end{align*}`
+and `\(\overline{r}_{X}^{\text{bp}}\)` is a bound on `\(r\)`
+
+---
 # Coding up these estimators
 
 - Altonji, Elder, and Taber (2005) don't provide generalizable code for their approach
 
-- Krauth (2016) and Oster (2019) do, but it's only in Stata
+- Krauth (2016), Oster (2019), and Diegert, Masten, and Poirier (2022) each separately have Stata packages
 
-- There's nothing in Julia or R that I am aware of
+- Diegert, Masten, and Poirier (2022) may also have a Python package
 
-- Krauth (2016) codes in FORTRAN, which may be easily portable to Julia
+- There's nothing in Julia or R that I am aware of, but I know that Diegert, Masten, and Poirier (2022) are planning to develop an R package
+
+- A somewhat related approach by Cinelli and Hazlett (2020) has an accompanying R package called [sensemakr](https://github.com/carloscinelli/sensemakr)
+
+---
+# Example Stata code
+
+- Below is a code snippet that shows how to use each of these Stata packages
+
+- The [full do-file](https://github.com/OU-PhD-Econometrics/fall-2022/blob/master/LectureNotes/15-RCR/sensitivity_examples.do) is available on GitHub
+
+.scroll-box-12[
+```{c++,eval=F}
+// load the data
+use bfg2020, clear
+
+// create dummies
+qui tab statea, gen(statea_d)
+
+// define local macros
+local y avgrep2000to2016
+local d tye_tfe890_500kNI_100_l6
+local x1 log_area_2010 lat lon temp_mean rain_mean elev_mean d_coa d_riv d_lak ave_gyi
+local x0 statea_d*
+local x `x1' `x0'
+local SE cluster(km_grid_cel_code)
+
+// OLS: "short" model
+reg `y' `d', `SE'
+
+// OLS: "medium" model
+reg `y' `d' `x', `SE'
+
+// Krauth
+rcr `y' `d' `x', lambda(0 0.1) cluster(km_grid_cel_code)
+
+// Oster
+qui reg `y' `d' `x', `SE'
+psacalc beta `d', delta(0) // returns "medium" OLS result
+psacalc beta `d'           // returns an estimate of coeff. of interest ("beta") when ratio of sel. on obs. ÷ sel. on unobs. ("delta") is equal to 1
+psacalc delta `d', beta(0) rmax(0.7) // reports ratio of sel. on obs. ÷ sel. on unobs. ("delta") such that coeff. of interest ("beta") is equal to 0
+
+// Diegert et al.
+regsensitivity `y' `d' `x', compare(`x1') //  Breakdown point = 80.4%, meaning that the OLS coefficient becomes 0 if treatment is 80% as correlated with unobservables as it is with observables
+regsensitivity bounds `y' `d' `x', compare(`x1') // only reports the bounds
+```
+]
+
 
 ---
 # Papers that use these approaches
@@ -250,7 +382,7 @@ Corr(d, \varepsilon) = \lambda Corr(d, X\beta)
     
     - Use Krauth's method
     
-    - `\(\lambda^\ast\)` typically very close to 0
+    - `\(\lambda^\ast\)` (breakdown point) typically very close to 0
     
     - This implies that `\(\alpha\rightarrow 0\)` for even slight deviations of `\(Corr(d,\varepsilon)\)` from 0
     
@@ -355,7 +487,7 @@ Race and Gender Interactions | N  | N | Y | Y | Y
 HS and NBHD Variables | N  | N | N | Y | Y  
 Ratings (excluding Personal) | N  | N | N | N | Y 
 
-A pseudo `\(R^2\)` of 0.56 is the same as a linear `\(R^2\)` of `\(\approx\)` 0.8-0.9
+A pseudo `\(R^2\)` of 0.56 in this context is about the same as a linear `\(R^2\)` of `\(\approx\)` 0.8-0.9
 
 ---
 # Relative correlations in discrimination studies
@@ -397,7 +529,7 @@ A pseudo `\(R^2\)` of 0.56 is the same as a linear `\(R^2\)` of `\(\approx\)` 0.
     
     - exclude from `\(X\)` interactions between low-SES status and race
     
-- See Arcidiacono, Kinsler, and Ransom (2020b) for more details
+- See Arcidiacono, Kinsler, and Ransom (2022b) for more details
 
 ---
 # What did the court decide?
@@ -435,13 +567,24 @@ A pseudo `\(R^2\)` of 0.56 is the same as a linear `\(R^2\)` of `\(\approx\)` 0.
 ---
 # References
 .tiny[
-Altonji, J. G, T. E. Elder, and C. R. Taber (2005). "Selection on
+Altonji, J. G., T. E. Elder, and C. R. Taber (2005). "Selection on
 Observed and Unobserved Variables: Assessing the Effectiveness of
 Catholic Schools". In: _Journal of Political Economy_ 113.1, pp.
 151-184. DOI: [10.1086/426036](https://doi.org/10.1086%2F426036).
 
-Arcidiacono, P., J. Kinsler, and T. Ransom (2020b). _Asian American
-Discrimination in Harvard Admissions_. Working Paper. Duke University.
+Arcidiacono, P., J. Kinsler, and T. Ransom (2022b). "Asian American
+Discrimination in Harvard Admissions". In: _European Economic Review_
+144, p. 104079. DOI:
+[10.1016/j.euroecorev.2022.104079](https://doi.org/10.1016%2Fj.euroecorev.2022.104079).
+
+Cinelli, C. and C. Hazlett (2020). "Making Sense of Sensitivity:
+Extending Omitted Variable Bias". In: _Journal of the Royal Statistical
+Society: Series B (Statistical Methodology)_ 82.1, pp. 39-67. DOI:
+[10.1111/rssb.12348](https://doi.org/10.1111%2Frssb.12348).
+
+Diegert, P., M. A. Masten, and A. Poirier (2022). _Assessing Omitted
+Variable Bias when the Controls are Endogenous_. DOI:
+[10.48550/ARXIV.2206.02303](https://doi.org/10.48550%2FARXIV.2206.02303).
 
 Krauth, B. (2016). "Bounding a Linear Causal Effect Using Relative
 Correlation Restrictions". In: _Journal of Econometric Methods_ 5.1,
@@ -520,6 +663,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

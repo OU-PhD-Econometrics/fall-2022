@@ -114,7 +114,7 @@ class: title-slide
 y &= \alpha d + X\beta + \varepsilon
 \end{align*}
 
-- We want to estimate $\alpha$ such that we can infer causality of $d$ on $y$
+- We want to estimate $\alpha$ such that we can infer causality of treatment $d$ on $y$
 
 - But since we only have observational data, this is a tall task
 
@@ -130,7 +130,7 @@ y &= \alpha d + X\beta + \varepsilon
 ---
 # Intuition
 
-- Thinking again about our model,
+- Thinking again about our model (and assume $X$ includes an intercept),
 
 \begin{align*}
 y &= \alpha d + X\beta + \varepsilon
@@ -236,15 +236,140 @@ Corr(d, \varepsilon) = \lambda Corr(d, X\beta)
 
 
 ---
+# `r Citet(biblio,"diegert_al2022")`
+
+- The three prior papers each assume that $Corr(X, \varepsilon) = 0$
+
+- i.e. the $X$'s (control variables) are themselves exogenous
+
+- But this is rarely true in practice
+
+- Propose thinking about an extended model:
+
+\begin{align*}
+y &= \alpha d + X\beta + \underbrace{W\gamma + \nu}_{ = \varepsilon}
+\end{align*}
+where $W$ represents unobservable variables and $\nu$ is a pure error term
+
+- Other methods allow $d$ and $W$ to be correlated through $Corr(d, \varepsilon)$ 
+
+- but do not allow $X$ and $W$ to be correlated
+
+---
+# Terminology of `r Citet(biblio,"diegert_al2022")`
+
+- .hi[long regression:] regress $Y$ on $d$, $X$ and $W$
+
+    - this is the regression we want to run but can't because $W$ is unobserved
+
+- .hi[medium regression:] regress $Y$ on $d$ and $X$
+
+    - this is the regression we can run, but which may be of limited use
+
+- $\alpha_{\text{long}}$ is the true treatment effect, but $\alpha_{\text{med}}$ is the one we can feasibly estimate
+
+- .hi[breakdown point:] largest magnitude of selection on unobservables relative to observables needed to overturn a specific baseline finding
+
+- the breakdown point is a single number that summarizes a study's robustness to selection on unobservables while also allow for the $X$'s to be endogenous
+
+---
+# Sensitivity parameters
+
+- There are three sensitivity parameters $(\overline{r}_X, \overline{r}_Y, \overline{c})$ which are defined as follows:
+
+$\overline{r}_X$ measures how correlated treatment is to the index of unobservables compared to the index of observables
+
+\begin{align*}
+Corr(d, W\gamma) &\leq \overline{r}_X Corr(d, X\beta)
+\end{align*}
+
+$\overline{r}_y$ measures how correlated the outcome is to the index of unobservables compared to the index of observables
+
+\begin{align*}
+Corr(y, W\gamma) &\leq \overline{r}_Y Corr(y, X\beta)
+\end{align*}
+
+$\overline{c}$ measures the partial $R^2$ of $W$ above and beyond $X$ in the long regression
+\begin{align*}
+\text{partial  }R^2_{W,X} &\leq \overline{c}
+\end{align*}
+
+---
+# Breakdown point
+
+- The .hi[breakdown point] $\overline{r}_{X}^{\text{bp}}$ is the largest value of $\overline{r}_X$ such that $\alpha_{\text{long}}$ would be 0
+
+- The formula for $\overline{r}_{X}^{\text{bp}}$ is a function of $R^2_{Y\sim d \cdot X}$ and partial $R^2$ terms:
+
+\begin{align*}
+\overline{r}_{X}^{\text{bp}} & = \left( \frac{R^2_{Y\sim d \cdot X}}{ \frac{R^2_{d\sim X}}{1 - R^2_{d\sim X}} + R^2_{Y\sim d \cdot X}  } \right)^{\frac{1}{2}}
+\end{align*}
+
+where $R^2_{Y\sim d \cdot X}$ means "the $R^2$ from a regression of $y$ on $d$ and $X$"
+
+In other words,
+\begin{align*}
+\text{Selection on Unobservables} & = r \cdot (\text{Selection on Observables})
+\end{align*}
+and $\overline{r}_{X}^{\text{bp}}$ is a bound on $r$
+
+---
 # Coding up these estimators
 
 - `r Citet(biblio,"altonji_al2005jpe")` don't provide generalizable code for their approach
 
-- `r Citet(biblio,"krauth2016")` and `r Citet(biblio,"oster2019")` do, but it's only in Stata
+- `r Citet(biblio,"krauth2016")`, `r Citet(biblio,"oster2019")`, and `r Citet(biblio,"diegert_al2022")` each separately have Stata packages
 
-- There's nothing in Julia or R that I am aware of
+- `r Citet(biblio,"diegert_al2022")` may also have a Python package
 
-- `r Citet(biblio,"krauth2016")` codes in FORTRAN, which may be easily portable to Julia
+- There's nothing in Julia or R that I am aware of, but I know that `r Citet(biblio,"diegert_al2022")` are planning to develop an R package
+
+- A somewhat related approach by `r Citet(biblio,"cinelliHazlett2020")` has an accompanying R package called [sensemakr](https://github.com/carloscinelli/sensemakr)
+
+---
+# Example Stata code
+
+- Below is a code snippet that shows how to use each of these Stata packages
+
+- The [full do-file](https://github.com/OU-PhD-Econometrics/fall-2022/blob/master/LectureNotes/15-RCR/sensitivity_examples.do) is available on GitHub
+
+.scroll-box-12[
+```{c++,eval=F}
+// load the data
+use bfg2020, clear
+
+// create dummies
+qui tab statea, gen(statea_d)
+
+// define local macros
+local y avgrep2000to2016
+local d tye_tfe890_500kNI_100_l6
+local x1 log_area_2010 lat lon temp_mean rain_mean elev_mean d_coa d_riv d_lak ave_gyi
+local x0 statea_d*
+local x `x1' `x0'
+local SE cluster(km_grid_cel_code)
+
+// OLS: "short" model
+reg `y' `d', `SE'
+
+// OLS: "medium" model
+reg `y' `d' `x', `SE'
+
+// Krauth
+rcr `y' `d' `x', lambda(0 0.1) cluster(km_grid_cel_code)
+
+// Oster
+qui reg `y' `d' `x', `SE'
+psacalc beta `d', delta(0) // returns "medium" OLS result
+psacalc beta `d'           // returns an estimate of coeff. of interest ("beta") when ratio of sel. on obs. ÷ sel. on unobs. ("delta") is equal to 1
+psacalc delta `d', beta(0) rmax(0.7) // reports ratio of sel. on obs. ÷ sel. on unobs. ("delta") such that coeff. of interest ("beta") is equal to 0
+
+// Diegert et al.
+regsensitivity `y' `d' `x', compare(`x1') //  Breakdown point = 80.4%, meaning that the OLS coefficient becomes 0 if treatment is 80% as correlated with unobservables as it is with observables
+regsensitivity bounds `y' `d' `x', compare(`x1') // only reports the bounds
+```
+]
+
 
 ---
 # Papers that use these approaches
@@ -259,7 +384,7 @@ Corr(d, \varepsilon) = \lambda Corr(d, X\beta)
     
     - Use Krauth's method
     
-    - $\lambda^\ast$ typically very close to 0
+    - $\lambda^\ast$ (breakdown point) typically very close to 0
     
     - This implies that $\alpha\rightarrow 0$ for even slight deviations of $Corr(d,\varepsilon)$ from 0
     
@@ -364,7 +489,7 @@ Race and Gender Interactions | N  | N | Y | Y | Y
 HS and NBHD Variables | N  | N | N | Y | Y  
 Ratings (excluding Personal) | N  | N | N | N | Y 
 
-A pseudo $R^2$ of 0.56 is the same as a linear $R^2$ of $\approx$ 0.8-0.9
+A pseudo $R^2$ of 0.56 in this context is about the same as a linear $R^2$ of $\approx$ 0.8-0.9
 
 ---
 # Relative correlations in discrimination studies
@@ -406,7 +531,7 @@ A pseudo $R^2$ of 0.56 is the same as a linear $R^2$ of $\approx$ 0.8-0.9
     
     - exclude from $X$ interactions between low-SES status and race
     
-- See `r Citet(biblio,"realpenalty2020")` for more details
+- See `r Citet(biblio,"akr2022discrim")` for more details
 
 ---
 # What did the court decide?
