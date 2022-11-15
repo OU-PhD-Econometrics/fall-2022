@@ -282,3 +282,4 @@ Other Params     : cbar = 1, rybar = +inf
 . 
 end of do-file
 
+. exit, clear
