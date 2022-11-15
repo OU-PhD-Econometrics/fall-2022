@@ -34,7 +34,7 @@ Full course syllabus is [here](https://raw.githack.com/OU-PhD-Econometrics/fall-
 | 26   | Thu Nov 17  | [Potential Outcomes, ATE, LATE, and Control Functions](https://raw.githack.com/OU-PhD-Econometrics/fall-2022/master/LectureNotes/17-PO/17slides.html) | [Mixtape](https://mixtape.scunning.com/04-potential_outcomes), Ch. 4 | [Reading Quiz](https://github.com/OU-PhD-Econometrics/fall-2022/blob/master/ReadingQuizzes/RQ13.md) |
 | ---  | Tue Nov 22  | **No class**                 | | |
 | ---  | Thu Nov 24  | **No class** (Thanksgiving)  | | |
-| 27   | Tue Nov 29  | [Intro to Machine Learning](https://raw.githack.com/OU-PhD-Econometrics/fall-2022/master/LectureNotes/19-IntroML/19slides.html) | [James et al., section 2.1 (pp. 15-29)](https://faculty.marshall.usc.edu/gareth-james/ISL/ISLR%20Seventh%20Printing.pdf) | [Reading Quiz](https://github.com/OU-PhD-Econometrics/fall-2022/blob/master/ReadingQuizzes/RQ14.md) |
+| 27   | Tue Nov 29  | [Intro to Machine Learning](https://raw.githack.com/OU-PhD-Econometrics/fall-2022/master/LectureNotes/19-IntroML/19slides.html) | [James et al., section 2.1 (pp. 15-29)](https://hastie.su.domains/ISLR2/ISLRv2_website.pdf) | [Reading Quiz](https://github.com/OU-PhD-Econometrics/fall-2022/blob/master/ReadingQuizzes/RQ14.md) |
 | 28   | Thu Dec  1  | [Machine Learning for Causal Modeling](https://raw.githack.com/OU-PhD-Econometrics/fall-2022/master/LectureNotes/20-CausalML/20slides.html)  | | Work on Referee Report & Presentation |
 | 29   | Tue Dec  6  | Presentations or Time Series Intro (depending on time) | | Presentation  |
 | 30   | Thu Dec  8  | Presentations  | | Presentation, [Referee Report](https://github.com/OU-PhD-Econometrics/fall-2022/blob/master/OtherAssignments/RefereeReport.pdf)  |
