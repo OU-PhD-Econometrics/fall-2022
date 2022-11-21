@@ -442,6 +442,20 @@ And it follows from the law of iterated expectations that (denoting by $p=\mathb
 
     - smoothed version of `r Citet(biblio,"heckman1990")`
 
+---
+# Recent updates to difference-in-differences (DiD)
+ 
+- The period 2018-22 saw a large and sudden increase in scrutiny of the basic difference-in-differences model
+
+- `r Citet(biblio,"roth_al2022")` go through the main updates to the literature
+
+- Discussion centers on two topics:
+
+    1. Parallel trends assumption
+    
+    2. Whether the two-way fixed effects (TWFE) estimator actual estimates the treatment parameter of interest (ATT)
+
+- See also [this post](https://causalinf.substack.com/p/two-stage-did-and-taming-the-did) by Scott Cunningham discussing these issues
 
 ---
 # Further reading
