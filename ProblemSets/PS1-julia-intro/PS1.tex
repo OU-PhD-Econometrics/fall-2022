@@ -27,7 +27,7 @@ Directions: Answer all questions. Each student must turn in their own copy, but 
 
 Before starting, you will need to install and load the following packages:
 \begin{itemize}
-    \item[~] \texttt{JLD2}
+    \item[~] \texttt{JLD}
     \item[~] \texttt{Random}
     \item[~] \texttt{LinearAlgebra}
     \item[~] \texttt{Statistics}
@@ -106,10 +106,10 @@ i.e., let columns 1, 5 and 6 remain stationary over time.
 \item Reading in Data and calculating summary statistics
 
 \begin{enumerate}
-\item Clear the workspace and import the file \texttt{nlsw88.csv} into Julia as a \texttt{DataFrame}. Make sure you appropriately convert missing values and variable names. Save the result as \texttt{nlsw88.jld}.
+\item Import the file \texttt{nlsw88.csv} into Julia as a \texttt{DataFrame}. Make sure you appropriately convert missing values and variable names. Save the result as \texttt{nlsw88.jld}.
 \item What percentage of the sample has never been married? What percentage are college graduates?
 \item Use the \texttt{freqtable()} function to report what percentage of the sample is in each race category
-\item Use the \texttt{describe()} function to create a matrix called \texttt{summarystats} which lists the mean, median, standard deviation, min, max, number of unique elements, and interquartile range (75th percentile minus 25th percentile) of the data frame. How many \texttt{grade} observations are missing?
+\item Use the \texttt{describe()} function to create a matrix called \texttt{summarystats} which lists the mean, median, standard deviation, min, max, number of unique elements of the data frame. How many \texttt{grade} observations are missing?
 \item Show the joint distribution of industry and occupation using a cross-tabulation.
 \item Tabulate the mean wage over industry and occupation categories. Hint: you should first subset the data frame to only include the columns industry, occupation and wage. You should then follow the ``split-apply-combine'' directions \href{https://juliadata.github.io/DataFrames.jl/stable/man/split_apply_combine/}{\texttt{here}}.
 \item Wrap a function definition around all of the code for question 3. Call the function \texttt{q3()}. The function should have no inputs and no outputs. At the very bottom of your script you should add the code \texttt{q3()}.
