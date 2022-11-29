@@ -140,7 +140,7 @@ There are two main assumptions:
     - Especially if the choice dimension is much larger than work/not work?
 
 ---
-# `r Citet(biblio,"ransom2020")`
+# `r Citet(biblio,"ransom2021")`
 
 - Considers geographic heterogeneity in wage returns to college major
 
@@ -373,6 +373,40 @@ where $s$ is US state, $t$ is time, and $a_{st}$ is the abortion rate (15-25 yea
 
 - Take into account within-unit serial correlation
 
+
+---
+# Recent advances in difference-in-differences
+
+- `r Citet(biblio,"roth_al2022")` provide an overview of recent advances
+
+- `r Citet(biblio,"deChaiseDHault2022")` also provide an overview
+
+- Main advances:
+
+    - Multiple periods and variation in treatment timing
+
+    - Non-parallel trends
+
+    - Alternative sampling assumptions (i.e. appropriate standard errors)
+
+- Main idea is that treatment effect heterogeneity complicates things
+
+---
+# Key papers in new DiD literature
+
+- Multiple periods and variation in treatment timing:
+
+    - `r Citet(biblio,"deChaiseDHault2020AER")`; `r Citet(biblio,"bacon2021")`; `r Citet(biblio,"cs2021")`; `r Citet(biblio,"sunAbraham2021")`
+
+- Relaxing parallel trends assumption / testing for pre-trends:
+
+    - `r Citet(biblio,"roth2022")`; others (see `r Citet(biblio,"roth_al2022")`)
+
+- Appropriate standard errors in DiD estimation:
+
+    - `r Citet(biblio, "rothSantAnna2022")`; others (see `r Citet(biblio,"roth_al2022")`)
+
+
 ---
 # Further reading
 
@@ -384,13 +418,13 @@ where $s$ is US state, $t$ is time, and $a_{st}$ is the abortion rate (15-25 yea
 
     - Example of using Double ML to estimate employer monopsony power
 
-- `r Citet(biblio,"angristFrandsen2019")`
+- `r Citet(biblio,"angristFrandsen2022")`
 
     - Discussion of the role ML should play in empirical labor economics
 
 ---
 # References
-.tinier[
+.minuscule[
 ```{r refs, echo=FALSE, results="asis"}
 PrintBibliography(biblio)
 ```

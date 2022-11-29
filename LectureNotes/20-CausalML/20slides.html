@@ -4,6 +4,7 @@
     <title>Lecture 20</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tyler Ransom" />
+    <script src="20slides_files/header-attrs-2.14/header-attrs.js"></script>
     <link href="20slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="20slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="20slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -23,19 +24,25 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+
+
+
+
+
+class: title-slide
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 # Lecture 20
+
 ## Machine Learning for Causal Modeling
+
 ### Tyler Ransom
+
 ### ECON 6343, University of Oklahoma
 
 ---
-
-
-
-
-
 
 # Plan for the Day
 
@@ -128,7 +135,7 @@ There are two main assumptions:
     - Especially if the choice dimension is much larger than work/not work?
 
 ---
-# Ransom (2020)
+# Ransom (2021)
 
 - Considers geographic heterogeneity in wage returns to college major
 
@@ -361,6 +368,41 @@ where `\(s\)` is US state, `\(t\)` is time, and `\(a_{st}\)` is the abortion rat
 
 - Take into account within-unit serial correlation
 
+
+---
+# Recent advances in difference-in-differences
+
+- Roth, Sant'Anna, Bilinski, and Poe (2022) provide an overview of recent advances
+
+- de Chaisemartin and D'Haultfoeuille (2022) also provide an overview
+
+- Main advances:
+
+    - Multiple periods and variation in treatment timing
+
+    - Non-parallel trends
+
+    - Alternative sampling assumptions (i.e. appropriate standard errors)
+
+- Main idea is that treatment effect heterogeneity complicates things
+
+---
+# Key papers in new DiD literature
+
+- Multiple periods and variation in treatment timing:
+
+    - de
+Chaisemartin and D'Haultfoeuille (2020); Goodman-Bacon (2021); Callaway and Sant’Anna (2021); Sun and Abraham (2021)
+
+- Relaxing parallel trends assumption / testing for pre-trends:
+
+    - Roth (2022); others (see Roth, Sant'Anna, Bilinski, et al. (2022))
+
+- Appropriate standard errors in DiD estimation:
+
+    - Roth and Sant'Anna (2021); others (see Roth, Sant'Anna, Bilinski, et al. (2022))
+
+
 ---
 # Further reading
 
@@ -372,16 +414,16 @@ where `\(s\)` is US state, `\(t\)` is time, and `\(a_{st}\)` is the abortion rat
 
     - Example of using Double ML to estimate employer monopsony power
 
-- Angrist and Frandsen (2019)
+- Angrist and Frandsen (2022)
 
     - Discussion of the role ML should play in empirical labor economics
 
 ---
 # References
-.tinier[
-Angrist, J. and B. Frandsen (2019). _Machine Labor_. Working Paper
-26584. National Bureau of Economic Research. DOI:
-[10.3386/w26584](https://doi.org/10.3386%2Fw26584).
+.minuscule[
+Angrist, J. D. and B. Frandsen (2022). "Machine Labor". In: _Journal of
+Labor Economics_ 40.S1, pp. S97-S140. DOI:
+[10.1086/717933](https://doi.org/10.1086%2F717933).
 
 Athey, S., M. Bayati, N. Doudchenko, et al. (2018). _Matrix Completion
 Methods for Causal Panel Data Models_. Working Paper 25132. National
@@ -393,12 +435,12 @@ heterogeneous causal effects". In: _Proceedings of the National Academy
 of Sciences_ 113.27, pp. 7353-7360. DOI:
 [10.1073/pnas.1510489113](https://doi.org/10.1073%2Fpnas.1510489113).
 
-Bajari, P, D. Nekipelov, S. P. Ryan, et al. (2015). "Machine Learning
+Bajari, P., D. Nekipelov, S. P. Ryan, et al. (2015). "Machine Learning
 Methods for Demand Estimation". In: _American Economic Review_ 105.5,
 pp. 481-485. DOI:
 [10.1257/aer.p20151021](https://doi.org/10.1257%2Faer.p20151021).
 
-Belloni, A, V. Chernozhukov, and C. Hansen (2014). "Inference on
+Belloni, A., V. Chernozhukov, and C. Hansen (2014). "Inference on
 Treatment Effects after Selection among High-Dimensional Controls". In:
 _Review of Economic Studies_ 81.2, pp. 608-650. DOI:
 [10.1093/restud/rdt044](https://doi.org/10.1093%2Frestud%2Frdt044).
@@ -407,19 +449,40 @@ Bonhomme, S., T. Lamadon, and E. Manresa (2019). _Discretizing
 Unobserved Heterogeneity_. Working Paper. University of Chicago. URL:
 [https://lamadon.com/paper/blm2_2019.pdf](https://lamadon.com/paper/blm2_2019.pdf).
 
-Chernozhukov, V, D. Chetverikov, M. Demirer, et al. (2018).
+Callaway, B. and P. H. Sant’Anna (2021). "Difference-in-Differences
+with multiple time periods". In: _Journal of Econometrics_ 225.2.
+Themed Issue: Treatment Effect 1, pp. 200-230. DOI:
+[10.1016/j.jeconom.2020.12.001](https://doi.org/10.1016%2Fj.jeconom.2020.12.001).
+
+Chaisemartin, C. de and X. D'Haultfoeuille (2020). "Two-Way Fixed
+Effects Estimators with Heterogeneous Treatment Effects". In: _American
+Economic Review_ 110.9, pp. 2964-2996. DOI:
+[10.1257/aer.20181169](https://doi.org/10.1257%2Faer.20181169).
+
+Chernozhukov, V., D. Chetverikov, M. Demirer, et al. (2018).
 "Double/Debiased Machine Learning for Treatment and Structural
 Parameters". In: _Econometrics Journal_ 21.1, pp. C1-C68. DOI:
 [10.1111/ectj.12097](https://doi.org/10.1111%2Fectj.12097).
+
+de Chaisemartin, C. and X. D'Haultfoeuille (2022). "Two-way Fixed
+Effects and Differences-in-differences with Heterogeneous Treatment
+Effects: A S urvey". In: _The Econometrics Journal_. DOI:
+[10.1093/ectj/utac017](https://doi.org/10.1093%2Fectj%2Futac017).
 
 Donohue, J. J. I. and S. D. Levitt (2001). "The Impact of Legalized
 Abortion on Crime". In: _Quarterly Journal of Economics_ 116.2, pp.
 379-420. DOI:
 [10.1162/00335530151144050](https://doi.org/10.1162%2F00335530151144050).
 
-Dube, A, J. Jacobs, S. Naidu, et al. (2020). "Monopsony in Online Labor
-Markets". In: _American Economic Review: Insights_ 2.1, pp. 33-46. DOI:
+Dube, A., J. Jacobs, S. Naidu, et al. (2020). "Monopsony in Online
+Labor Markets". In: _American Economic Review: Insights_ 2.1, pp.
+33-46. DOI:
 [10.1257/aeri.20180150](https://doi.org/10.1257%2Faeri.20180150).
+
+Goodman-Bacon, A. (2021). "Difference-in-differences with variation in
+treatment timing". In: _Journal of Econometrics_ 225.2. Themed Issue:
+Treatment Effect 1, pp. 254-277. DOI:
+[10.1016/j.jeconom.2021.03.014](https://doi.org/10.1016%2Fj.jeconom.2021.03.014).
 
 Heckman, J. J. (1979). "Sample Selection Bias as a Specification
 Error". In: _Econometrica_ 47.1, pp. 153-161. DOI:
@@ -430,9 +493,31 @@ Econometric Approach". In: _Journal of Economic Perspectives_ 31.2, pp.
 87-106. DOI:
 [10.1257/jep.31.2.87](https://doi.org/10.1257%2Fjep.31.2.87).
 
-Ransom, T. (2020). _Selective Migration, Occupational Choice, and the
-Wage Returns to College Majors_. Discussion Paper 13370. IZA. URL:
-[http://ftp.iza.org/dp13370.pdf](http://ftp.iza.org/dp13370.pdf).
+Ransom, T. (2021). "Selective Migration, Occupational Choice, and the
+Wage Returns to College Majors". In: _Annals of Economics &amp; Statistics_
+142, pp. 45-110. DOI:
+[10.15609/annaeconstat2009.142.0045](https://doi.org/10.15609%2Fannaeconstat2009.142.0045).
+
+Roth, J. (2022). "Pretest with Caution: Event-Study Estimates after
+Testing for Parallel Trends". In: _American Economic Review: Insights_
+4.3, pp. 305-322. DOI:
+[10.1257/aeri.20210236](https://doi.org/10.1257%2Faeri.20210236).
+
+Roth, J. and P. H. C. Sant'Anna (2021). _Efficient Estimation for
+Staggered Rollout Designs_. Working Paper. DOI:
+[10.48550/ARXIV.2102.01291](https://doi.org/10.48550%2FARXIV.2102.01291).
+URL:
+[https://arxiv.org/abs/2102.01291](https://arxiv.org/abs/2102.01291).
+
+Roth, J., P. Sant'Anna, A. Bilinski, et al. (2022). "What's Trending in
+Difference-in-Differences? A Synthesis of the Recent Econometrics
+Literature". In: _Journal of Econometrics_.
+
+Sun, L. and S. Abraham (2021). "Estimating Dynamic Treatment Effects in
+Event Studies with Heterogeneous Treatment Effects". In: _Journal of
+Econometrics_ 225.2. Themed Issue: Treatment Effect 1, pp. 175-199.
+DOI:
+[10.1016/j.jeconom.2020.09.006](https://doi.org/10.1016%2Fj.jeconom.2020.09.006).
 ]
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
@@ -483,6 +568,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
