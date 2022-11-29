@@ -4,6 +4,7 @@
     <title>Lecture 19</title>
     <meta charset="utf-8" />
     <meta name="author" content="Tyler Ransom" />
+    <script src="19slides_files/header-attrs-2.14/header-attrs.js"></script>
     <link href="19slides_files/remark-css-0.0.1/default.css" rel="stylesheet" />
     <link href="19slides_files/remark-css-0.0.1/metropolis.css" rel="stylesheet" />
     <link href="19slides_files/remark-css-0.0.1/metropolis-fonts.css" rel="stylesheet" />
@@ -23,19 +24,25 @@
   </head>
   <body>
     <textarea id="source">
-class: center, middle, inverse, title-slide
+
+
+
+
+
+
+class: title-slide
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
 
 # Lecture 19
+
 ## Introduction to Machine Learning
+
 ### Tyler Ransom
+
 ### ECON 6343, University of Oklahoma
 
 ---
-
-
-
-
-
 
 # Attribution
 
@@ -43,14 +50,14 @@ Today's material is based on the two main Statistical Learning textbooks:
 
 .pull-left[
 .center[
-&lt;img src="islr_cover.png" width="146" height="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="islr_cover.png" height="90%" style="display: block; margin: auto;" /&gt;
 .small[James, Witten, Hastie, and Tibshirani (2013)]
 ]
 ]
 
 .pull-right[
 .center[
-&lt;img src="eslr_cover.png" width="149" height="90%" style="display: block; margin: auto;" /&gt;
+&lt;img src="eslr_cover.png" height="90%" style="display: block; margin: auto;" /&gt;
 .small[Hastie, Tibshirani, and Friedman (2009)]
 ]
 ]
@@ -531,12 +538,12 @@ Adams, R. P. (2018). _Model Selection and Cross Validation_. Lecture
 Notes. Princeton University. URL:
 [https://www.cs.princeton.edu/courses/archive/fall18/cos324/files/model-selection.pdf](https://www.cs.princeton.edu/courses/archive/fall18/cos324/files/model-selection.pdf).
 
-Hastie, T, R. Tibshirani, and J. Friedman (2009). _The Elements of
+Hastie, T., R. Tibshirani, and J. Friedman (2009). _The Elements of
 Statistical Learning: Data Mining, Inference, Prediction_. 2nd. New
 York: Springer. URL:
 [https://web.stanford.edu/~hastie/Papers/ESLII.pdf](https://web.stanford.edu/~hastie/Papers/ESLII.pdf).
 
-James, G, D. Witten, T. Hastie, et al. (2013). _An Introduction to
+James, G., D. Witten, T. Hastie, et al. (2013). _An Introduction to
 Statistical Learning with Applications in R_. New York: Springer. DOI:
 [10.1007/978-1-4614-7138-7](https://doi.org/10.1007%2F978-1-4614-7138-7).
 URL:
@@ -590,6 +597,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable
